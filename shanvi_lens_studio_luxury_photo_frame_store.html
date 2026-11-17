@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shanvi Lens Studio | Luxury Custom Photo Framing & Fine Art Studio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Luxury English Editorial Typography (Cormorant Garamond, Playfair Display, Cinzel, Plus Jakarta Sans, Montserrat) + Signature Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        /* Brand Colors from lense2.png (Deep Burgundy & Champagne Gold) & lense.png (Dusty Rose) */
+                        burgundy: {
+                            50: '#fdf3f4',
+                            100: '#fbe5e8',
+                            500: '#6b1d2f',
+                            700: '#4A121E', /* Main 'S' & 'SHANVI' Maroon */
+                            900: '#2d0911',
+                        },
+                        gold: {
+                            50: '#fbf8f1',
+                            100: '#f5eedc',
+                            300: '#dfc28d',
+                            500: '#C59B5F', /* Main 'L' & 'LENS STUDIO' Champagne Gold */
+                            600: '#ad8347',
+                            700: '#8c6632',
+                        },
+                        rosebrand: {
+                            100: '#f9f0f1',
+                            400: '#c48f93',
+                            500: '#B37A7E', /* Cursive 'Shanvi' Camera Signature Dusty Rose */
+                            700: '#8f585c',
+                        },
+                        esewa: '#60BB46',
+                        khalti: '#5C2D91',
+                        obsidian: '#121011',
+                        ivory: '#FDFBF7'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', '"Montserrat"', 'sans-serif'],
+                        cormorant: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        playfair: ['"Playfair Display"', 'Georgia', 'serif'],
+                        cinzel: ['"Cinzel"', 'serif'],
+                        signature: ['"Alex Brush"', 'cursive'],
+                        monogram: ['"Cormorant Garamond"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --en-heading-font: 'Cormorant Garamond', Georgia, serif;
+        }
+        body {
+            background-color: #FDFBF7;
+            color: #121011;
+            font-family: 'Plus Jakarta Sans', 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Dynamic Luxury English Heading Font Switcher */
+        body[data-font-theme="cormorant"] {
+            --en-heading-font: 'Cormorant Garamond', Georgia, serif;
+        }
+        body[data-font-theme="playfair"] {
+            --en-heading-font: 'Playfair Display', Georgia, serif;
+        }
+        body[data-font-theme="cinzel"] {
+            --en-heading-font: 'Cinzel', Georgia, serif;
+        }
+
+        .np-heading {
+            font-family: var(--en-heading-font);
+            line-height: 1.2;
+            letter-spacing: 0.015em;
+        }
+
+        .np-poetic {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            line-height: 1.5;
+        }
+
+        /* Realistic Frame Border Styles for the Customizer Studio & Cards */
+        .frame-preview-wrapper {
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35), 0 8px 20px -4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 6 Authentic Frame Finishes */
+        .frame-style-gold {
+            border: 18px solid transparent;
+            border-image: linear-gradient(135deg, #C59B5F 0%, #f3e5ab 25%, #9c7338 50%, #f3e5ab 75%, #b8860b 100%) 1;
+            box-shadow: inset 0 0 10px rgba(138, 102, 21, 0.6), 0 22px 45px rgba(0,0,0,0.3);
+        }
+        .frame-style-burgundy {
+            border: 18px solid transparent;
+            border-image: linear-gradient(135deg, #4A121E 0%, #732032 45%, #300912 75%, #5e1827 100%) 1;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.75), 0 22px 45px rgba(74, 18, 30, 0.35);
+        }
+        .frame-style-rosegold {
+            border: 18px solid transparent;
+            border-image: linear-gradient(135deg, #B37A7E 0%, #ebd4d6 35%, #8f585c 65%, #d9a7ab 100%) 1;
+            box-shadow: inset 0 0 8px rgba(143, 88, 92, 0.5), 0 22px 45px rgba(0,0,0,0.28);
+        }
+        .frame-style-black {
+            border: 18px solid #141414;
+            box-shadow: inset 0 0 8px rgba(0,0,0,0.8), 0 22px 45px rgba(0,0,0,0.35);
+            outline: 1px solid #2e2e2e;
+        }
+        .frame-style-wood {
+            border: 18px solid #8B5A2B;
+            border-image: repeating-linear-gradient(45deg, #7c4d25, #8f5b2d 10px, #70431f 20px) 1;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5), 0 22px 45px rgba(0,0,0,0.3);
+        }
+        .frame-style-white {
+            border: 18px solid #f5f5f4;
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.18), 0 20px 40px rgba(0,0,0,0.22);
+            outline: 1px solid #e5e5e5;
+        }
+
+        /* Inner Mat Board Shadow */
+        .mat-board-inner {
+            box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.28), inset -1px -1px 4px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Product Image Mini Frame Effect */
+        .card-mini-frame {
+            border: 8px solid #18181b;
+            padding: 10px;
+            background: #ffffff;
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.2), 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .product-card:hover .card-mini-frame {
+            transform: scale(1.03);
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.2), 0 18px 30px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Pulse animation for Live WhatsApp button */
+        @keyframes pulse-green {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); }
+            50% { box-shadow: 0 0 0 12px rgba(34, 197, 94, 0); }
+        }
+        .wa-pulse {
+            animation: pulse-green 2.2s infinite;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FDFBF7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4A121E;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body data-font-theme="cormorant" class="antialiased selection:bg-burgundy-700 selection:text-white">
+
+    <!-- 1. TOP ROYAL ANNOUNCEMENT BAR (100% Luxury English + Font Style Switcher + Payment Highlights) -->
+    <div class="bg-burgundy-900 text-white text-xs py-2.5 px-4 border-b border-burgundy-700">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <!-- Left Announcement -->
+            <div class="flex items-center space-x-3">
+                <span class="flex items-center gap-2 text-gold-300 font-medium tracking-wide">
+                    <i class="fa-solid fa-crown text-gold-500"></i>
+                    <span>SHANVI LENS STUDIO • Nationwide Delivery & Archival HD Photo Framing</span>
+                </span>
+                <span class="hidden md:inline-flex items-center gap-1.5 bg-white/10 px-2.5 py-0.5 rounded-full text-[11px] text-green-300 border border-green-500/30">
+                    <i class="fa-brands fa-whatsapp"></i> Direct WhatsApp: +977 9865045852
+                </span>
+            </div>
+
+            <!-- Right Controls: English Font Theme Switcher, Payment Badges & AI Prompt -->
+            <div class="flex flex-wrap items-center gap-2 sm:gap-3 ml-auto">
+                <!-- Luxury English Font Switcher -->
+                <div class="flex items-center bg-black/40 px-3 py-1 rounded-full border border-gold-500/30">
+                    <i class="fa-solid fa-font text-gold-500 mr-1.5 text-xs"></i>
+                    <span class="text-[11px] text-gold-300 mr-1 hidden sm:inline">Font Style:</span>
+                    <select id="fontThemeSelect" onchange="changeEnglishFontTheme(this.value)" class="bg-transparent text-white text-[11px] font-semibold focus:outline-none cursor-pointer">
+                        <option value="cormorant" class="bg-obsidian text-white">Editorial Luxury (Cormorant)</option>
+                        <option value="playfair" class="bg-obsidian text-white">Classic Gallery (Playfair)</option>
+                        <option value="cinzel" class="bg-obsidian text-white">Royal Monogram (Cinzel)</option>
+                    </select>
+                </div>
+
+                <!-- Accepted Nepali Payments Pill -->
+                <div class="hidden sm:flex items-center gap-1.5 bg-black/40 px-3 py-1 rounded-full border border-gold-500/30 text-[11px]">
+                    <span class="w-2 h-2 rounded-full bg-esewa"></span>
+                    <span class="text-white font-semibold">eSewa</span>
+                    <span class="text-neutral-500">•</span>
+                    <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                    <span class="text-white font-semibold">Khalti</span>
+                    <span class="text-neutral-500">•</span>
+                    <span class="text-gold-300 font-semibold">Bank Cards (NPR)</span>
+                </div>
+
+                <!-- Prompt & Code Guide -->
+                <button onclick="openModal('promptModal')" class="text-gold-300 hover:text-white underline font-medium flex items-center gap-1 text-[11px]">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>AI Prompt & Guide</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. STICKY MAIN HEADER WITH UPLOADED SHANVI LENS STUDIO MONOGRAM (lense2.png) & SIGNATURE -->
+    <header class="sticky top-0 z-40 bg-ivory/95 backdrop-blur-md shadow-sm border-b border-gold-300/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24 gap-4">
+                
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-burgundy-700 hover:text-gold-600 focus:outline-none" aria-label="Open Menu">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+
+                <!-- PRIMARY BRAND LOGO: Uploaded lense2.png + Exact Vector Monogram Replica -->
+                <a href="#" class="flex items-center gap-3.5 group shrink-0">
+                    <div class="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-ivory border-2 border-gold-500/50 flex items-center justify-center overflow-hidden shadow-sm group-hover:border-burgundy-700 transition p-1">
+                        <img id="mainHeaderLogoImg" src="lense2.png" alt="Shanvi Lens Studio Logo" 
+                             class="w-full h-full object-contain"
+                             onerror="this.style.display='none'; document.getElementById('fallbackHeaderMonogram').classList.remove('hidden');">
+                        <!-- High-Precision SVG Replica of lense2.png ('SL' Deep Burgundy + Gold) -->
+                        <div id="fallbackHeaderMonogram" class="hidden w-full h-full flex flex-col items-center justify-center bg-[#FDFBF7] select-none">
+                            <svg viewBox="0 0 120 115" class="w-full h-full">
+                                <!-- Deep Maroon 'S' -->
+                                <text x="26" y="74" font-family="'Cormorant Garamond', Georgia, serif" font-weight="700" font-size="76" fill="#4A121E">S</text>
+                                <!-- Champagne Gold 'L' Interlocked -->
+                                <text x="45" y="78" font-family="'Cormorant Garamond', Georgia, serif" font-weight="700" font-size="76" fill="#C59B5F">L</text>
+                                <!-- SHANVI Text -->
+                                <text x="60" y="97" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="13" letter-spacing="3" fill="#4A121E">SHANVI</text>
+                                <line x1="20" y1="102" x2="100" y2="102" stroke="#C59B5F" stroke-width="1"/>
+                                <text x="60" y="111" text-anchor="middle" font-family="sans-serif" font-weight="600" font-size="6.5" letter-spacing="2.5" fill="#C59B5F">LENS STUDIO</text>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Luxury English Studio Name & Tagline -->
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-2">
+                            <span class="np-heading text-2xl sm:text-3xl font-bold text-burgundy-700 leading-none tracking-[0.14em] uppercase">
+                                SHANVI
+                            </span>
+                        </div>
+                        <div class="h-[1.5px] w-full bg-gradient-to-r from-gold-500 via-burgundy-700/40 to-transparent my-1"></div>
+                        <span class="text-[10px] sm:text-xs text-gold-700 font-bold tracking-[0.28em] uppercase leading-none flex items-center gap-1.5">
+                            <i class="fa-solid fa-camera text-[10px] text-rosebrand-500"></i>
+                            <span>LENS STUDIO</span>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Search Bar (Desktop - English) -->
+                <div class="hidden md:flex flex-1 max-w-md mx-4">
+                    <div class="relative w-full">
+                        <input type="text" id="searchInput" oninput="filterProducts()" 
+                            placeholder="Search frames (e.g., Royal Gold, Wedding, Wood, Collage)..." 
+                            class="w-full pl-10 pr-4 py-2.5 text-xs sm:text-sm bg-white border border-gold-300 rounded-full focus:outline-none focus:border-burgundy-700 transition shadow-inner">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-burgundy-700/60 text-sm"></i>
+                    </div>
+                </div>
+
+                <!-- Action Buttons (Upload Own Photos, Logo Settings, Cart) -->
+                <div class="flex items-center space-x-2 sm:space-x-3">
+                    <!-- Button 1: Add/Replace Store Owner's Own Product Photos -->
+                    <button onclick="openModal('ownerUploadModal')" 
+                        class="flex items-center gap-2 bg-burgundy-700 hover:bg-burgundy-900 text-white px-3.5 sm:px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition shadow-sm"
+                        title="Upload your own store frame photos">
+                        <i class="fa-solid fa-camera text-gold-300"></i>
+                        <span class="hidden sm:inline">+ Upload My Frame Photo</span>
+                        <span class="sm:hidden">+ Photo</span>
+                    </button>
+
+                    <!-- Button 2: Logo & Signature Manager -->
+                    <button onclick="openModal('logoSettingsModal')" 
+                        class="p-2.5 bg-white hover:bg-rosebrand-100 text-burgundy-700 border border-gold-300 rounded-full transition shadow-xs"
+                        title="Manage Studio Logo & Signature">
+                        <i class="fa-solid fa-signature text-sm"></i>
+                    </button>
+
+                    <!-- Cart Drawer Trigger -->
+                    <button onclick="toggleCartDrawer(true)" class="relative px-3.5 py-2 bg-gold-50 hover:bg-gold-100 text-burgundy-700 border border-gold-500/50 rounded-full transition shadow-xs flex items-center gap-2">
+                        <i class="fa-solid fa-bag-shopping text-base"></i>
+                        <span class="hidden sm:inline text-xs font-bold">Bag</span>
+                        <span id="cartCountBadge" class="w-5 h-5 bg-burgundy-700 text-gold-300 text-xs font-bold rounded-full flex items-center justify-center shadow">
+                            0
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Category Navigation Bar (100% Luxury English) -->
+            <nav class="hidden lg:flex items-center justify-center space-x-7 py-2.5 border-t border-gold-300/30 text-xs uppercase tracking-wider font-semibold text-neutral-700">
+                <button onclick="setCategory('All Frames')" class="nav-cat-btn text-burgundy-700 border-b-2 border-burgundy-700 pb-1 transition font-bold" data-cat="All Frames">
+                    All Frames
+                </button>
+                <button onclick="setCategory('Royal Gold Frames')" class="nav-cat-btn hover:text-burgundy-700 pb-1 transition" data-cat="Royal Gold Frames">
+                    Royal Gold Frames
+                </button>
+                <button onclick="setCategory('Wedding & Couple')" class="nav-cat-btn hover:text-burgundy-700 pb-1 transition" data-cat="Wedding & Couple">
+                    Wedding & Couple
+                </button>
+                <button onclick="setCategory('Teak & Hardwood')" class="nav-cat-btn hover:text-burgundy-700 pb-1 transition" data-cat="Teak & Hardwood">
+                    Teak & Hardwood
+                </button>
+                <button onclick="setCategory('Wall Collage Sets')" class="nav-cat-btn hover:text-burgundy-700 pb-1 transition" data-cat="Wall Collage Sets">
+                    Wall Collage Sets
+                </button>
+                <button onclick="setCategory('My Uploaded Frames')" class="nav-cat-btn hover:text-burgundy-700 pb-1 transition flex items-center gap-1" data-cat="My Uploaded Frames">
+                    <i class="fa-solid fa-star text-gold-500 text-xs"></i>
+                    <span>My Uploaded Frames</span>
+                </button>
+                <a href="#customizer-studio" class="text-burgundy-700 hover:text-gold-700 pb-1 flex items-center gap-1.5 font-bold bg-gold-100/70 px-3 py-1 rounded-full border border-gold-300">
+                    <i class="fa-solid fa-wand-magic-sparkles text-burgundy-700 text-xs"></i>
+                    <span>Custom Frame Your Photo</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Mobile Search & Menu Dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-ivory border-t border-gold-300/40 px-4 pt-3 pb-5 space-y-3">
+            <div class="relative w-full">
+                <input type="text" id="mobileSearchInput" oninput="filterProducts(this.value)" placeholder="Search luxury frames..." 
+                    class="w-full pl-9 pr-4 py-2 text-sm bg-white border border-neutral-300 rounded-full focus:outline-none focus:border-burgundy-700">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-neutral-400 text-xs"></i>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-2">
+                <button onclick="setCategory('All Frames'); toggleMobileMenu()" class="px-3.5 py-1.5 bg-burgundy-700 text-white text-xs rounded-full font-semibold">All Frames</button>
+                <button onclick="setCategory('Royal Gold Frames'); toggleMobileMenu()" class="px-3.5 py-1.5 bg-white border border-gold-300 text-obsidian text-xs rounded-full">Royal Gold</button>
+                <button onclick="setCategory('Wedding & Couple'); toggleMobileMenu()" class="px-3.5 py-1.5 bg-white border border-gold-300 text-obsidian text-xs rounded-full">Wedding & Couple</button>
+                <button onclick="setCategory('Teak & Hardwood'); toggleMobileMenu()" class="px-3.5 py-1.5 bg-white border border-gold-300 text-obsidian text-xs rounded-full">Teak & Hardwood</button>
+                <button onclick="setCategory('Wall Collage Sets'); toggleMobileMenu()" class="px-3.5 py-1.5 bg-white border border-gold-300 text-obsidian text-xs rounded-full">Collage Sets</button>
+                <button onclick="setCategory('My Uploaded Frames'); toggleMobileMenu()" class="px-3.5 py-1.5 bg-gold-100 text-burgundy-700 text-xs font-bold rounded-full">★ My Uploads</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. HERO SPLIT SHOWCASE BANNER WITH SHANVI LENS STUDIO SIGNATURE (lense.png) -->
+    <section class="relative bg-gradient-to-br from-burgundy-900 via-[#240910] to-obsidian text-white overflow-hidden border-b-4 border-gold-500">
+        <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#C59B5F_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Left Column: Luxury English Messaging + Signature Watermark -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 border border-gold-500/50 text-gold-300 text-xs font-semibold uppercase tracking-widest">
+                        <i class="fa-solid fa-award text-gold-500"></i>
+                        <span>Shanvi Lens Studio • Bespoke Photography & Custom Framing</span>
+                    </div>
+
+                    <!-- Luxury Editorial Display Heading -->
+                    <div class="space-y-3">
+                        <h1 class="np-heading text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-ivory">
+                            Frame Your Priceless <span class="text-gold-500 italic">Memories & Portraits</span> in Timeless Elegance.
+                        </h1>
+                        <p class="np-poetic text-lg sm:text-2xl text-gold-300/95 italic">
+                            “Every photograph holds an unforgettable story — we craft the gallery frame it deserves.”
+                        </p>
+                    </div>
+
+                    <p class="text-neutral-200 text-sm sm:text-base max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Handcrafted <strong>Shanvi Royal Burgundy, Brushed Champagne Gold, Signature Dusty Rose, and Aged Teak Wood</strong> frames for weddings, family portraits, baby milestones, and luxury interiors. Preview your own photo live and checkout seamlessly in <strong>Nepali Rupees (Rs.) via eSewa, Khalti, or Bank Cards</strong>.
+                    </p>
+                    
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#customizer-studio" class="px-7 py-3.5 bg-gold-500 hover:bg-gold-600 text-obsidian font-extrabold rounded-full shadow-xl transition transform hover:-translate-y-0.5 flex items-center gap-2.5 text-sm sm:text-base">
+                            <i class="fa-solid fa-upload"></i>
+                            <span>Upload & Frame Your Photo Live</span>
+                        </a>
+                        <button onclick="openDirectWhatsAppChat('Hello Shanvi Lens Studio! I would like to order a custom photo frame.')" class="px-6 py-3.5 bg-green-600 hover:bg-green-700 text-white font-bold rounded-full transition flex items-center gap-2 text-sm sm:text-base shadow-lg">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Live Chat on WhatsApp</span>
+                        </button>
+                    </div>
+
+                    <!-- UPLOADED STUDIO SIGNATURE BANNER (lense.png cursive camera signature) -->
+                    <div class="pt-5 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 border-t border-white/15">
+                        <div class="bg-ivory px-5 py-2.5 rounded-2xl shadow-md border border-gold-500/60 flex items-center justify-center">
+                            <img id="heroSignatureImg" src="lense.png" alt="Shanvi Lens Studio Signature" 
+                                 class="h-12 sm:h-14 w-auto object-contain"
+                                 onerror="this.style.display='none'; document.getElementById('fallbackHeroSignature').classList.remove('hidden');">
+                            <!-- Exact Vector Replica of lense.png ('Shanvi' Cursive + Camera in Dusty Rose #B37A7E) -->
+                            <div id="fallbackHeroSignature" class="hidden flex flex-col items-center px-2 select-none">
+                                <svg viewBox="0 0 250 75" class="h-12 sm:h-14 w-auto">
+                                    <!-- Cursive Shanvi -->
+                                    <text x="12" y="46" font-family="'Alex Brush', cursive" font-size="52" fill="#B37A7E">Shanvi</text>
+                                    <!-- Camera Outline Icon on Top Right of 'i' -->
+                                    <g transform="translate(182, 8)" stroke="#B37A7E" stroke-width="2.5" fill="none">
+                                        <rect x="2" y="8" width="42" height="30" rx="6" fill="#FDFBF7"/>
+                                        <path d="M13 8 L17 2 L27 2 L31 8 Z" fill="#FDFBF7"/>
+                                        <circle cx="23" cy="23" r="9"/>
+                                        <circle cx="23" cy="23" r="5"/>
+                                        <circle cx="37" cy="14" r="1.5" fill="#B37A7E"/>
+                                    </g>
+                                    <line x1="25" y1="56" x2="195" y2="56" stroke="#B37A7E" stroke-width="1"/>
+                                    <text x="110" y="70" text-anchor="middle" font-family="sans-serif" font-weight="600" font-size="9" letter-spacing="5" fill="#2A2829">LENS STUDIO</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="text-xs sm:text-sm text-neutral-200 text-center sm:text-left">
+                            <div class="font-bold text-gold-300 uppercase tracking-wider">Authentic Shanvi Studio Signature Edition</div>
+                            <div class="text-xs text-neutral-300 mt-0.5">Fade-Resistant HD Lab Print • Crystal Acrylic Glass • Ready to Hang</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Featured Wall Gallery Showcase with Signature Stamp -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative bg-ivory text-obsidian p-6 sm:p-7 rounded-3xl border-2 border-gold-500 shadow-2xl max-w-md w-full">
+                        <!-- Top Monogram Seal Badge -->
+                        <div class="absolute -top-4 left-6 bg-burgundy-700 text-gold-300 text-xs font-bold px-4 py-1 rounded-full tracking-wider uppercase shadow-md border border-gold-500 flex items-center gap-1.5">
+                            <i class="fa-solid fa-crown text-gold-500"></i>
+                            <span>Shanvi Signature Collection</span>
+                        </div>
+
+                        <!-- Framed Preview inside Hero -->
+                        <div class="bg-neutral-200/80 p-6 rounded-2xl flex flex-col items-center justify-center relative mt-2">
+                            <div id="heroFrameBox" class="frame-style-burgundy bg-white p-5 transition-all duration-500 max-w-[250px] relative">
+                                <img id="heroPreviewImg" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80" 
+                                     onerror="this.src='https://placehold.co/500x600/4A121E/C59B5F?text=Shanvi+Studio'"
+                                     alt="Shanvi Lens Studio Frame" class="w-full h-60 object-cover mat-board-inner">
+                                
+                                <!-- Bottom-right Studio Signature Stamp on Mat Board (lense.png) -->
+                                <div class="mt-2 flex items-center justify-end opacity-90">
+                                    <img src="lense.png" alt="Shanvi Signature" class="h-5 w-auto object-contain"
+                                         onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                    <span class="hidden font-signature text-base text-[#B37A7E] leading-none">Shanvi <i class="fa-solid fa-camera text-[9px]"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Hero Frame Try Buttons -->
+                        <div class="mt-4 flex items-center justify-between border-t border-neutral-200 pt-3">
+                            <span class="text-xs font-bold text-burgundy-700 uppercase tracking-wider">
+                                Test Frame Finish:
+                            </span>
+                            <div class="flex gap-2">
+                                <button onclick="setHeroFrame('frame-style-burgundy')" class="w-6 h-6 rounded-full bg-[#4A121E] ring-2 ring-offset-1 ring-gold-500" title="Shanvi Royal Burgundy"></button>
+                                <button onclick="setHeroFrame('frame-style-gold')" class="w-6 h-6 rounded-full bg-[#C59B5F]" title="Brushed Champagne Gold"></button>
+                                <button onclick="setHeroFrame('frame-style-rosegold')" class="w-6 h-6 rounded-full bg-[#B37A7E]" title="Signature Dusty Rose Gold"></button>
+                                <button onclick="setHeroFrame('frame-style-black')" class="w-6 h-6 rounded-full bg-black" title="Matte Obsidian Black"></button>
+                                <button onclick="setHeroFrame('frame-style-wood')" class="w-6 h-6 rounded-full bg-amber-800" title="Natural Teak Wood"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. OWNER HELPER BANNER: HOW TO UPLOAD YOUR OWN PHOTOS & LOGOS -->
+    <div class="bg-rosebrand-100 border-b border-rosebrand-400/40 py-3 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm text-obsidian">
+            <div class="flex items-center gap-2.5">
+                <span class="bg-burgundy-700 text-gold-300 font-bold px-2.5 py-1 rounded text-xs uppercase tracking-wider shrink-0">Studio Admin Bar</span>
+                <p class="font-medium text-burgundy-900">
+                    To showcase your own store photos, click <strong>"+ Upload My Frame Photo"</strong> or click the camera <i class="fa-solid fa-camera text-burgundy-700"></i> icon on any product card.
+                </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+                <button onclick="openModal('logoSettingsModal')" class="bg-white hover:bg-gold-50 text-burgundy-700 border border-burgundy-700/30 px-3 py-1.5 rounded-lg text-xs font-bold transition">
+                    <i class="fa-solid fa-image mr-1"></i> Logo & Signature
+                </button>
+                <button onclick="openModal('ownerUploadModal')" class="bg-burgundy-700 hover:bg-burgundy-900 text-white px-3.5 py-1.5 rounded-lg text-xs font-bold transition">
+                    + Add New Frame
+                </button>
+                <button onclick="resetDefaultProducts()" class="text-neutral-600 hover:text-red-700 underline text-xs px-2 py-1" title="Restore default studio catalog">
+                    Reset Catalog
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. MAIN PRODUCT CATALOG GRID (100% English + NPR Pricing) -->
+    <section id="catalog-section" class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header & Sorting -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-gold-300/50 gap-4">
+            <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-burgundy-700 flex items-center gap-1.5">
+                    <i class="fa-solid fa-sparkles text-gold-500"></i>
+                    <span>Shanvi Lens Studio Curated Gallery</span>
+                </span>
+                <h2 id="currentCategoryTitle" class="np-heading text-3xl sm:text-4xl font-bold text-obsidian mt-1">
+                    All Luxury Photo Frames
+                </h2>
+                <p class="text-sm text-burgundy-700 font-medium mt-0.5">
+                    Handcrafted frames for living rooms, wedding portraits, corporate offices, and memorable gifts
+                </p>
+            </div>
+            
+            <div class="flex flex-wrap items-center gap-3">
+                <span id="productCountText" class="text-xs text-neutral-600 font-semibold">Showing all frames</span>
+                <select id="sortSelect" onchange="renderProducts()" class="bg-white border border-gold-300 text-obsidian text-xs sm:text-sm font-semibold rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-burgundy-700 shadow-xs">
+                    <option value="featured">Sort By: Featured Collection</option>
+                    <option value="low-high">Price: Low to High (Rs.)</option>
+                    <option value="high-low">Price: High to Low (Rs.)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Dynamic Product Grid -->
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <!-- Populated by JavaScript -->
+        </div>
+
+        <!-- Hidden File Input for Quick Single-Card Photo Replacement -->
+        <input type="file" id="quickReplaceInput" accept="image/*" class="hidden" onchange="handleQuickPhotoReplace(event)">
+    </section>
+
+    <!-- 6. LIVE CUSTOM FRAME STUDIO ("Upload & Frame Your Photo" + SHANVI SIGNATURE WATERMARK) -->
+    <section id="customizer-studio" class="py-16 bg-obsidian text-white border-t-4 border-gold-500 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="px-4 py-1 rounded-full bg-gold-500/20 text-gold-300 text-xs font-bold uppercase tracking-widest border border-gold-500/40">
+                    Shanvi Lens Studio • Interactive Framing Lab
+                </span>
+                <h2 class="np-heading text-3xl sm:text-5xl font-bold mt-3 text-ivory">
+                    Upload Your Photo & Preview Your Custom Frame Live
+                </h2>
+                <p class="text-neutral-300 text-xs sm:text-sm mt-2">
+                    Select any photo from your phone or computer and test our Shanvi Royal Burgundy, Brushed Gold, Dusty Rose Gold, Matte Black, or Teak Wood mouldings before ordering!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-neutral-900/95 p-6 sm:p-10 rounded-3xl border border-gold-500/30 shadow-2xl">
+                
+                <!-- Left: Live Wall Preview Room -->
+                <div class="lg:col-span-7 flex flex-col items-center justify-center bg-[#EBE6DF] rounded-2xl p-6 sm:p-12 min-h-[450px] relative overflow-hidden" id="wallBackground">
+                    <!-- Subtle Wall Texture Label -->
+                    <div class="absolute top-3 left-4 flex items-center gap-2 bg-burgundy-900/85 backdrop-blur-sm text-gold-300 text-xs px-3.5 py-1 rounded-full border border-gold-500/30">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>Interactive Wall Preview</span>
+                    </div>
+
+                    <!-- Wall Color Switcher -->
+                    <div class="absolute top-3 right-4 flex items-center gap-1.5 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
+                        <span class="text-[11px] font-bold text-obsidian mr-1">Wall Color:</span>
+                        <button onclick="changeWallBg('#EBE6DF')" class="w-4 h-4 rounded-full bg-[#EBE6DF] border border-neutral-400" title="Warm Ivory Wall"></button>
+                        <button onclick="changeWallBg('#f9f0f1')" class="w-4 h-4 rounded-full bg-[#f9f0f1] border border-neutral-400" title="Soft Blush Wall"></button>
+                        <button onclick="changeWallBg('#2d0911')" class="w-4 h-4 rounded-full bg-[#2d0911] border border-neutral-400" title="Royal Burgundy Wall"></button>
+                        <button onclick="changeWallBg('#1e293b')" class="w-4 h-4 rounded-full bg-[#1e293b] border border-neutral-400" title="Charcoal Slate Wall"></button>
+                    </div>
+
+                    <!-- The Framed Photo Preview Box -->
+                    <div id="studioFrameContainer" class="frame-preview-wrapper frame-style-burgundy bg-white p-6 transition-all duration-300 max-w-xs sm:max-w-sm w-full flex flex-col items-center justify-center my-4 relative">
+                        <img id="studioUploadedImg" 
+                             src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=700&q=80" 
+                             onerror="this.src='https://placehold.co/600x700/4A121E/C59B5F?text=Shanvi+Lens+Studio'"
+                             alt="Your Custom Framed Photo Preview" 
+                             class="w-full max-h-[290px] object-cover mat-board-inner transition-all duration-300">
+                        
+                        <!-- Toggleable Shanvi Lens Studio Signature Stamp (lense.png) on Mat Board -->
+                        <div id="studioSignatureStamp" class="w-full flex justify-end items-center pt-2 pr-1">
+                            <img id="studioSigImg" src="lense.png" alt="Shanvi Signature" class="h-6 w-auto object-contain opacity-95"
+                                 onerror="this.style.display='none'; document.getElementById('studioSigFallback').classList.remove('hidden');">
+                            <span id="studioSigFallback" class="hidden font-signature text-base text-[#B37A7E] leading-none">
+                                Shanvi <i class="fa-solid fa-camera text-[9px]"></i> <small class="text-[7px] font-sans tracking-widest uppercase text-neutral-500 block">LENS STUDIO</small>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Dimensions Indicator Badge -->
+                    <div id="studioSizeBadge" class="mt-2 text-xs font-bold text-burgundy-900 bg-white/95 px-4 py-1.5 rounded-full shadow border border-gold-300">
+                        Size: 12 x 16 Inches (A3 Medium Wall) • Shanvi Royal Burgundy Frame
+                    </div>
+                </div>
+
+                <!-- Right: Customizer Controls in English -->
+                <div class="lg:col-span-5 space-y-5">
+                    
+                    <!-- Step 1: Upload Photo from Device -->
+                    <div class="bg-burgundy-900/60 p-4 rounded-2xl border border-gold-500/40">
+                        <label class="block text-xs sm:text-sm font-bold text-gold-300 mb-2">
+                            1. Upload Photo From Your Phone or Computer
+                        </label>
+                        <label for="studioFileInput" class="w-full cursor-pointer bg-gold-500 hover:bg-gold-600 text-obsidian font-extrabold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition shadow-md text-xs sm:text-sm">
+                            <i class="fa-solid fa-cloud-arrow-up text-lg"></i>
+                            <span>Choose Your Photo from Gallery (JPG / PNG)</span>
+                        </label>
+                        <input type="file" id="studioFileInput" accept="image/*" class="hidden" onchange="handleStudioPhotoUpload(event)">
+                        <p id="uploadedFileName" class="text-xs text-neutral-300 mt-2 text-center">
+                            Test any wedding, family, or portrait photograph live!
+                        </p>
+                    </div>
+
+                    <!-- Step 2: Choose Frame Moulding Style -->
+                    <div>
+                        <label class="block text-xs sm:text-sm font-bold text-neutral-200 mb-2.5">
+                            2. Select Frame Moulding & Finish
+                        </label>
+                        <div class="grid grid-cols-3 sm:grid-cols-6 gap-2">
+                            <button onclick="updateStudioFrame('frame-style-burgundy', 'Shanvi Royal Burgundy Frame')" class="studio-frame-btn flex flex-col items-center p-2 rounded-xl bg-neutral-800 border-2 border-gold-500 hover:bg-neutral-700 transition">
+                                <span class="w-6 h-6 rounded-full bg-[#4A121E] border border-gold-300 mb-1 shadow"></span>
+                                <span class="text-[11px] font-medium">Burgundy</span>
+                            </button>
+                            <button onclick="updateStudioFrame('frame-style-gold', 'Brushed Champagne Gold Frame')" class="studio-frame-btn flex flex-col items-center p-2 rounded-xl bg-neutral-800 border-2 border-transparent hover:bg-neutral-700 transition">
+                                <span class="w-6 h-6 rounded-full bg-gradient-to-tr from-yellow-600 to-yellow-200 mb-1 shadow"></span>
+                                <span class="text-[11px] font-medium">Gold</span>
+                            </button>
+                            <button onclick="updateStudioFrame('frame-style-rosegold', 'Signature Dusty Rose Frame')" class="studio-frame-btn flex flex-col items-center p-2 rounded-xl bg-neutral-800 border-2 border-transparent hover:bg-neutral-700 transition">
+                                <span class="w-6 h-6 rounded-full bg-[#B37A7E] mb-1 shadow"></span>
+                                <span class="text-[11px] font-medium">Rose Gold</span>
+                            </button>
+                            <button onclick="updateStudioFrame('frame-style-black', 'Matte Obsidian Black Frame')" class="studio-frame-btn flex flex-col items-center p-2 rounded-xl bg-neutral-800 border-2 border-transparent hover:bg-neutral-700 transition">
+                                <span class="w-6 h-6 rounded-full bg-black border border-neutral-500 mb-1 shadow"></span>
+                                <span class="text-[11px] font-medium">Black</span>
+                            </button>
+                            <button onclick="updateStudioFrame('frame-style-wood', 'Natural Teak & Walnut Frame')" class="studio-frame-btn flex flex-col items-center p-2 rounded-xl bg-neutral-800 border-2 border-transparent hover:bg-neutral-700 transition">
+                                <span class="w-6 h-6 rounded-full bg-amber-800 mb-1 shadow"></span>
+                                <span class="text-[11px] font-medium">Teak Wood</span>
+                            </button>
+                            <button onclick="updateStudioFrame('frame-style-white', 'Museum Gallery White Frame')" class="studio-frame-btn flex flex-col items-center p-2 rounded-xl bg-neutral-800 border-2 border-transparent hover:bg-neutral-700 transition">
+                                <span class="w-6 h-6 rounded-full bg-white mb-1 shadow"></span>
+                                <span class="text-[11px] font-medium">White</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Mat Board Padding & Size -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold text-neutral-300 mb-1.5">
+                                3. Inner Mat Board Border
+                            </label>
+                            <select id="studioMatSelect" onchange="updateStudioMat(this.value)" class="w-full bg-neutral-800 border border-neutral-700 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-gold-500">
+                                <option value="p-6">Medium Gallery Mat (Classic)</option>
+                                <option value="p-0">No Mat Board (Full Bleed)</option>
+                                <option value="p-3">Slim Modern Mat</option>
+                                <option value="p-10">Wide Royal Exhibition Mat</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-neutral-300 mb-1.5">
+                                4. Select Frame Dimensions
+                            </label>
+                            <select id="studioSizeSelect" onchange="updateStudioPrice()" class="w-full bg-neutral-800 border border-neutral-700 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-gold-500">
+                                <option value="1250" data-label="8 x 10 Inches (A4 Desk / Wall)">8 x 10 Inches (A4) - Rs. 1,250</option>
+                                <option value="1950" selected data-label="12 x 16 Inches (A3 Medium Wall)">12 x 16 Inches (A3) - Rs. 1,950</option>
+                                <option value="3200" data-label="16 x 24 Inches (Large Wedding Portrait)">16 x 24 Inches (Large) - Rs. 3,200</option>
+                                <option value="4850" data-label="24 x 36 Inches (Grand Royal Statement)">24 x 36 Inches (Grand) - Rs. 4,850</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Include Shanvi Signature Stamp Checkbox -->
+                    <div class="flex items-center justify-between bg-neutral-800/70 px-3.5 py-2.5 rounded-xl border border-neutral-700">
+                        <label for="signatureToggle" class="text-xs sm:text-sm text-neutral-200 flex items-center gap-2 cursor-pointer">
+                            <i class="fa-solid fa-signature text-rosebrand-400"></i>
+                            <span>Include <strong>“Shanvi Lens Studio”</strong> Signature Watermark on Mat</span>
+                        </label>
+                        <input type="checkbox" id="signatureToggle" checked onchange="toggleStudioSignature(this.checked)" class="w-4 h-4 accent-gold-500 rounded cursor-pointer">
+                    </div>
+
+                    <!-- Price & Add Custom Frame to Cart / Instant Buy -->
+                    <div class="pt-3 border-t border-neutral-800 flex flex-wrap items-center justify-between gap-4">
+                        <div>
+                            <span class="text-xs text-neutral-400 block">HD Lab Print + Custom Frame:</span>
+                            <span id="studioLivePrice" class="text-2xl font-extrabold text-gold-500">Rs. 1,950</span>
+                        </div>
+                        <div class="flex gap-2 flex-1 sm:flex-initial">
+                            <button onclick="addCustomStudioFrameToCart(false)" class="flex-1 bg-gold-500 hover:bg-gold-600 text-obsidian font-extrabold py-3 px-4 rounded-xl transition flex items-center justify-center gap-2 text-xs sm:text-sm shadow-lg">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                <span>Add to Bag</span>
+                            </button>
+                            <button onclick="addCustomStudioFrameToCart(true)" class="bg-esewa hover:bg-green-600 text-white font-bold py-3 px-4 rounded-xl transition flex items-center justify-center gap-1.5 text-xs sm:text-sm shadow-lg" title="Instant Checkout with eSewa, Khalti or Card">
+                                <i class="fa-solid fa-bolt"></i>
+                                <span>Buy Now</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. NEPALI PAYMENT GATEWAYS & STUDIO AUTHENTICITY SHOWCASE (ENGLISH UI) -->
+    <section class="py-14 bg-white border-t border-gold-300/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Official Brand Seal & Nepali Payment Methods Card -->
+            <div class="bg-ivory rounded-3xl p-6 sm:p-10 border border-gold-300/60 shadow-sm mb-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Left: Both Uploaded Logos Displayed Together -->
+                    <div class="lg:col-span-7 flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
+                        <div class="flex items-center gap-3 shrink-0">
+                            <div class="w-24 h-24 rounded-2xl bg-white border border-gold-300 p-2 flex items-center justify-center shadow-xs">
+                                <img id="sealMonogramImg" src="lense2.png" alt="Shanvi Logo" class="w-full h-full object-contain"
+                                     onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                <div class="hidden text-center">
+                                    <span class="font-monogram text-3xl font-bold text-burgundy-700">S</span><span class="font-monogram text-3xl font-bold text-gold-500 -ml-1">L</span>
+                                    <span class="block text-[9px] font-bold text-burgundy-700">SHANVI STUDIO</span>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-2xl border border-gold-300 px-4 py-3 flex items-center justify-center shadow-xs">
+                                <img id="sealSignatureImg" src="lense.png" alt="Shanvi Signature" class="h-14 w-auto object-contain"
+                                     onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                <div class="hidden text-center">
+                                    <span class="font-signature text-3xl text-rosebrand-500">Shanvi <i class="fa-solid fa-camera text-sm"></i></span>
+                                    <span class="block text-[9px] tracking-widest text-obsidian font-bold">LENS STUDIO</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <span class="text-xs font-bold uppercase tracking-widest text-rosebrand-700">Official Studio Quality Guarantee</span>
+                            <h3 class="np-heading text-2xl sm:text-3xl font-bold text-burgundy-700">
+                                Master Craftsmanship & Seamless Nepali Digital Payments
+                            </h3>
+                            <p class="text-xs sm:text-sm text-neutral-700">
+                                Every frame crafted at Shanvi Lens Studio features high-definition archival printing, UV-protective lamination, and shatter-resistant clear acrylic glass.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right: Supported Nepali Payment Gateways (eSewa, Khalti, Bank Cards) -->
+                    <div class="lg:col-span-5 bg-white p-5 rounded-2xl border border-gold-300/70 shadow-xs space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-extrabold text-obsidian flex items-center gap-1.5">
+                                <i class="fa-solid fa-shield-halved text-green-600"></i>
+                                <span>Accepted Payment Gateways (NPR / Rs. Only):</span>
+                            </span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2.5 text-center">
+                            <div class="p-2.5 rounded-xl bg-[#60BB46]/10 border border-[#60BB46]/40 flex flex-col items-center justify-center">
+                                <span class="w-8 h-8 rounded-full bg-[#60BB46] text-white font-extrabold text-xs flex items-center justify-center mb-1">eS</span>
+                                <span class="text-xs font-bold text-[#3c8227]">eSewa</span>
+                                <span class="text-[10px] text-neutral-500">Mobile Wallet</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-[#5C2D91]/10 border border-[#5C2D91]/40 flex flex-col items-center justify-center">
+                                <span class="w-8 h-8 rounded-full bg-[#5C2D91] text-white font-extrabold text-xs flex items-center justify-center mb-1">Kh</span>
+                                <span class="text-xs font-bold text-[#5C2D91]">Khalti</span>
+                                <span class="text-[10px] text-neutral-500">Digital Wallet</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-burgundy-50 border border-burgundy-700/30 flex flex-col items-center justify-center">
+                                <span class="w-8 h-8 rounded-full bg-burgundy-700 text-gold-300 font-bold text-xs flex items-center justify-center mb-1"><i class="fa-solid fa-credit-card"></i></span>
+                                <span class="text-xs font-bold text-burgundy-700">Bank Cards</span>
+                                <span class="text-[10px] text-neutral-500">Visa / Mastercard</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 4 Pillars in Luxury English -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+                <div class="p-6 rounded-2xl bg-ivory border border-gold-300/40">
+                    <div class="w-12 h-12 mx-auto bg-burgundy-700 text-gold-300 rounded-full flex items-center justify-center text-xl mb-3">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h4 class="np-heading text-xl font-bold text-obsidian">Shatterproof Clear Acrylic & Glass</h4>
+                    <p class="text-xs sm:text-sm text-neutral-600 mt-1">Museum-grade glazing that protects your cherished photographs from dust, moisture, and UV rays.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-ivory border border-gold-300/40">
+                    <div class="w-12 h-12 mx-auto bg-burgundy-700 text-gold-300 rounded-full flex items-center justify-center text-xl mb-3">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h4 class="np-heading text-xl font-bold text-obsidian">Complimentary Photo Retouching</h4>
+                    <p class="text-xs sm:text-sm text-neutral-600 mt-1">Our studio editors enhance brightness, sharpness, and color balance before printing at no extra charge.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-ivory border border-gold-300/40">
+                    <div class="w-12 h-12 mx-auto bg-burgundy-700 text-gold-300 rounded-full flex items-center justify-center text-xl mb-3">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <h4 class="np-heading text-xl font-bold text-obsidian">eSewa, Khalti & Bank Cards</h4>
+                    <p class="text-xs sm:text-sm text-neutral-600 mt-1">Instant, secure checkout in Nepali Rupees (Rs.) via eSewa, Khalti, Fonepay QR, or Bank Cards.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-ivory border border-gold-300/40">
+                    <div class="w-12 h-12 mx-auto bg-green-600 text-white rounded-full flex items-center justify-center text-xl mb-3">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h4 class="np-heading text-xl font-bold text-obsidian">24/7 WhatsApp Live Chat</h4>
+                    <p class="text-xs sm:text-sm text-neutral-600 mt-1">Chat directly with our framing specialists at +977 9865045852 to send photos and track home delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FOOTER WITH SHANVI LENS STUDIO ENGLISH BRANDING -->
+    <footer class="bg-obsidian text-neutral-400 pt-14 pb-10 border-t-2 border-gold-500 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-ivory rounded-xl p-1 flex items-center justify-center">
+                            <img id="footerLogoImg" src="lense2.png" alt="Shanvi Lens Studio" class="w-full h-full object-contain"
+                                 onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                            <span class="hidden font-monogram font-bold text-xl text-burgundy-700">SL</span>
+                        </div>
+                        <div>
+                            <span class="np-heading text-xl font-bold text-white tracking-wider uppercase block">Shanvi Lens Studio</span>
+                            <span class="text-xs text-gold-500 block">Luxury Photography & Custom Framing</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-neutral-400 leading-relaxed">
+                        Shanvi Lens Studio is your premier destination for custom wedding portraits, family wall galleries, and handcrafted archival photo frames across Nepal.
+                    </p>
+                    <div class="text-xs text-gold-300 font-semibold flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-green-400 text-base"></i>
+                        <span>WhatsApp Direct: +977 9865045852</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-gold-300 font-bold text-xs uppercase tracking-widest mb-4">Frame Collections</h4>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="#catalog-section" onclick="setCategory('Royal Gold Frames')" class="hover:text-gold-500 transition">Royal Gold Frames</a></li>
+                        <li><a href="#catalog-section" onclick="setCategory('Wedding & Couple')" class="hover:text-gold-500 transition">Wedding & Couple Frames</a></li>
+                        <li><a href="#catalog-section" onclick="setCategory('Teak & Hardwood')" class="hover:text-gold-500 transition">Teak & Hardwood Frames</a></li>
+                        <li><a href="#catalog-section" onclick="setCategory('Wall Collage Sets')" class="hover:text-gold-500 transition">Family Wall Collage Sets</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-gold-300 font-bold text-xs uppercase tracking-widest mb-4">Studio Management</h4>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><button onclick="openModal('ownerUploadModal')" class="hover:text-gold-500 transition">+ Upload New Frame Product</button></li>
+                        <li><button onclick="openModal('logoSettingsModal')" class="hover:text-gold-500 transition">Manage Studio Logo & Signature</button></li>
+                        <li><button onclick="openModal('promptModal')" class="hover:text-gold-500 transition">AI Website Prompt & Guide</button></li>
+                        <li><a href="#customizer-studio" class="hover:text-gold-500 transition">Live Custom Framing Lab</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-gold-300 font-bold text-xs uppercase tracking-widest mb-4">Payments & Support</h4>
+                    <p class="text-xs text-neutral-400 mb-3">We accept instant payments in Nepali Rupees (NPR / Rs.) via:</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-[#60BB46]/20 border border-[#60BB46] text-green-300 rounded-lg text-xs font-bold">eSewa</span>
+                        <span class="px-3 py-1 bg-[#5C2D91]/30 border border-purple-400 text-purple-200 rounded-lg text-xs font-bold">Khalti</span>
+                        <span class="px-3 py-1 bg-neutral-800 border border-gold-500/40 text-gold-300 rounded-lg text-xs font-bold">Bank Cards (Visa/Mastercard)</span>
+                    </div>
+                    <button onclick="toggleWhatsAppWidget(true)" class="w-full py-2.5 bg-green-600 hover:bg-green-700 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                        <span>Start Live Chat (+9779865045852)</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="border-t border-neutral-800 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-neutral-500">
+                <p>© 2026 Shanvi Lens Studio. All Rights Reserved.</p>
+                <p class="mt-2 sm:mt-0 text-gold-300/80">All prices are listed in Nepali Rupees (NPR / Rs.).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===================================================================== -->
+    <!-- FLOATING WHATSAPP LIVE CHAT WIDGET (+9779865045852)                   -->
+    <!-- ===================================================================== -->
+    <div class="fixed bottom-5 right-5 z-40 flex flex-col items-end">
+        <!-- Expandable Chat Box -->
+        <div id="waChatPopup" class="hidden mb-3 w-80 sm:w-96 bg-white rounded-3xl shadow-2xl border-2 border-green-600 overflow-hidden transition-all">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-green-700 to-green-600 text-white p-4 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="relative w-11 h-11 rounded-full bg-ivory p-1 flex items-center justify-center border border-gold-300">
+                        <img src="lense2.png" alt="Shanvi" class="w-full h-full object-contain"
+                             onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                        <span class="hidden font-monogram font-bold text-burgundy-700 text-lg">SL</span>
+                        <span class="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-white rounded-full"></span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm leading-tight">Shanvi Lens Studio</h4>
+                        <span class="text-[11px] text-green-100 flex items-center gap-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-300 animate-ping"></span>
+                            Online • Replies Instantly
+                        </span>
+                    </div>
+                </div>
+                <button onclick="toggleWhatsAppWidget(false)" class="w-7 h-7 rounded-full bg-black/20 hover:bg-black/30 flex items-center justify-center text-white">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                </button>
+            </div>
+
+            <!-- Chat Body -->
+            <div class="p-4 bg-[#E5DDD5] space-y-3 max-h-72 overflow-y-auto">
+                <div class="bg-white p-3.5 rounded-2xl rounded-tl-none shadow-xs text-xs text-obsidian space-y-1">
+                    <span class="font-bold text-burgundy-700 block">Shanvi Studio Concierge</span>
+                    <p>Hello! 👋 Welcome to <strong>Shanvi Lens Studio</strong>. How can we help you frame your photos today? Pick a quick option below or type your message:</p>
+                    <span class="text-[10px] text-neutral-400 block text-right">Just now</span>
+                </div>
+
+                <!-- Quick English Chat Chips -->
+                <div class="space-y-1.5 pt-1">
+                    <span class="text-[11px] font-bold text-neutral-600 block">Quick Inquiry Options:</span>
+                    <button onclick="openDirectWhatsAppChat('Hello Shanvi Lens Studio! I want to frame my own photo and need help choosing a size.')" class="w-full text-left bg-white/95 hover:bg-green-50 border border-green-600/30 rounded-xl px-3 py-2 text-xs text-obsidian font-medium transition flex items-center justify-between">
+                        <span>📸 I want to custom frame my photo</span>
+                        <i class="fa-solid fa-paper-plane text-green-600 text-[10px]"></i>
+                    </button>
+                    <button onclick="openDirectWhatsAppChat('Hello! Could you share your frame sizes and price list in NPR (Rs.)?')" class="w-full text-left bg-white/95 hover:bg-green-50 border border-green-600/30 rounded-xl px-3 py-2 text-xs text-obsidian font-medium transition flex items-center justify-between">
+                        <span>💰 Frame sizes & NPR price inquiry</span>
+                        <i class="fa-solid fa-paper-plane text-green-600 text-[10px]"></i>
+                    </button>
+                    <button onclick="openDirectWhatsAppChat('Hello! I would like to pay via eSewa / Khalti and arrange home delivery.')" class="w-full text-left bg-white/95 hover:bg-green-50 border border-green-600/30 rounded-xl px-3 py-2 text-xs text-obsidian font-medium transition flex items-center justify-between">
+                        <span>💳 eSewa / Khalti payment & delivery</span>
+                        <i class="fa-solid fa-paper-plane text-green-600 text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Custom Message Input Footer -->
+            <div class="p-3 bg-white border-t border-neutral-200 flex items-center gap-2">
+                <input type="text" id="waCustomMsgInput" placeholder="Type your message here..." 
+                    onkeydown="if(event.key==='Enter') sendCustomWhatsAppMsg()"
+                    class="flex-1 text-xs bg-neutral-100 border border-neutral-300 rounded-full px-3.5 py-2.5 focus:outline-none focus:border-green-600">
+                <button onclick="sendCustomWhatsAppMsg()" class="w-9 h-9 rounded-full bg-green-600 hover:bg-green-700 text-white flex items-center justify-center shrink-0 shadow">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Floating Trigger Button -->
+        <button onclick="toggleWhatsAppWidget()" class="wa-pulse bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-full shadow-2xl flex items-center gap-2.5 font-bold text-xs sm:text-sm border-2 border-white transition transform hover:scale-105">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+            <div class="text-left leading-tight">
+                <span class="block text-[10px] text-green-100 font-normal">Chat With Us</span>
+                <span>WhatsApp Live Chat</span>
+            </div>
+        </button>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- MODAL 1: NEPALI PAYMENT GATEWAY CHECKOUT (eSewa, Khalti, Bank Cards)  -->
+    <!-- ===================================================================== -->
+    <div id="paymentGatewayModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border-2 border-gold-500 relative my-8">
+            <button onclick="closeModal('paymentGatewayModal')" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-200 flex items-center justify-center text-neutral-600">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-11 h-11 rounded-2xl bg-burgundy-700 text-gold-300 flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div>
+                    <span class="text-[11px] font-bold text-burgundy-700 uppercase tracking-wider">Secure Nepali Payment Gateway</span>
+                    <h3 class="np-heading text-2xl font-bold text-obsidian">Shanvi Lens Studio Checkout</h3>
+                </div>
+            </div>
+
+            <!-- Order Summary Banner in NPR -->
+            <div class="bg-ivory p-4 rounded-2xl border border-gold-300 flex items-center justify-between mb-5">
+                <div>
+                    <span class="text-xs text-neutral-600 block">Total Payable Amount (Nepali Rupees):</span>
+                    <span id="gatewayTotalAmount" class="text-2xl font-extrabold text-burgundy-700">Rs. 0</span>
+                </div>
+                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold">
+                    <i class="fa-solid fa-truck-fast mr-1"></i> Home Delivery Available
+                </span>
+            </div>
+
+            <!-- Customer Details Form -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+                <div>
+                    <label class="block text-xs font-bold text-obsidian mb-1">Your Full Name *</label>
+                    <input type="text" id="payCustName" required placeholder="e.g., Suman Sharma" class="w-full px-3.5 py-2 text-xs sm:text-sm border border-neutral-300 rounded-xl focus:outline-none focus:border-burgundy-700">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-obsidian mb-1">Mobile Number *</label>
+                    <input type="tel" id="payCustPhone" required placeholder="98XXXXXXXX" class="w-full px-3.5 py-2 text-xs sm:text-sm border border-neutral-300 rounded-xl focus:outline-none focus:border-burgundy-700">
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-xs font-bold text-obsidian mb-1">Full Delivery Address (City / Area) *</label>
+                    <input type="text" id="payCustAddress" required placeholder="e.g., New Baneshwor, Kathmandu" class="w-full px-3.5 py-2 text-xs sm:text-sm border border-neutral-300 rounded-xl focus:outline-none focus:border-burgundy-700">
+                </div>
+            </div>
+
+            <!-- Payment Method Tabs: eSewa, Khalti, Bank Cards -->
+            <label class="block text-xs font-bold text-obsidian mb-2">Select Payment Method (NPR / Rs.):</label>
+            <div class="grid grid-cols-3 gap-2.5 mb-5">
+                <button type="button" onclick="selectPaymentTab('esewa')" id="tabBtn-esewa" class="pay-tab-btn p-3 rounded-2xl border-2 border-[#60BB46] bg-[#60BB46]/10 flex flex-col items-center justify-center transition">
+                    <span class="w-9 h-9 rounded-full bg-[#60BB46] text-white font-extrabold text-sm flex items-center justify-center mb-1 shadow">eS</span>
+                    <span class="text-xs font-extrabold text-[#2f6e1c]">eSewa Wallet</span>
+                </button>
+                <button type="button" onclick="selectPaymentTab('khalti')" id="tabBtn-khalti" class="pay-tab-btn p-3 rounded-2xl border-2 border-neutral-200 hover:border-[#5C2D91] flex flex-col items-center justify-center transition">
+                    <span class="w-9 h-9 rounded-full bg-[#5C2D91] text-white font-extrabold text-sm flex items-center justify-center mb-1 shadow">Kh</span>
+                    <span class="text-xs font-extrabold text-[#5C2D91]">Khalti Wallet</span>
+                </button>
+                <button type="button" onclick="selectPaymentTab('card')" id="tabBtn-card" class="pay-tab-btn p-3 rounded-2xl border-2 border-neutral-200 hover:border-burgundy-700 flex flex-col items-center justify-center transition">
+                    <span class="w-9 h-9 rounded-full bg-burgundy-700 text-gold-300 font-bold text-sm flex items-center justify-center mb-1 shadow"><i class="fa-solid fa-credit-card"></i></span>
+                    <span class="text-xs font-extrabold text-burgundy-700">Bank Card / QR</span>
+                </button>
+            </div>
+
+            <!-- TAB 1: eSewa Payment Form -->
+            <div id="payPanel-esewa" class="p-4 rounded-2xl bg-[#60BB46]/10 border border-[#60BB46]/40 space-y-3">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-extrabold text-[#2f6e1c] flex items-center gap-1.5">
+                        <i class="fa-solid fa-circle-check text-[#60BB46]"></i>
+                        eSewa Mobile Wallet Payment
+                    </span>
+                    <span class="text-[11px] bg-[#60BB46] text-white px-2.5 py-0.5 rounded-full font-bold">Instant Transfer</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 items-center">
+                    <div class="space-y-2">
+                        <label class="block text-xs font-semibold text-obsidian">Your eSewa ID (Mobile No.):</label>
+                        <input type="text" id="esewaIdInput" placeholder="98XXXXXXXX" class="w-full px-3 py-2 text-xs bg-white border border-[#60BB46] rounded-xl focus:outline-none">
+                        <p class="text-[11px] text-neutral-600">Or scan the QR code / send payment directly to our official eSewa ID: <strong>9865045852</strong>.</p>
+                    </div>
+                    <div class="bg-white p-3 rounded-xl border border-[#60BB46]/40 flex flex-col items-center text-center">
+                        <i class="fa-solid fa-qrcode text-5xl text-[#2f6e1c] mb-1"></i>
+                        <span class="text-[11px] font-bold text-obsidian">Shanvi Studio eSewa: 9865045852</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: Khalti Payment Form -->
+            <div id="payPanel-khalti" class="hidden p-4 rounded-2xl bg-[#5C2D91]/10 border border-[#5C2D91]/40 space-y-3">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-extrabold text-[#5C2D91] flex items-center gap-1.5">
+                        <i class="fa-solid fa-circle-check text-[#5C2D91]"></i>
+                        Khalti Digital Wallet Payment
+                    </span>
+                    <span class="text-[11px] bg-[#5C2D91] text-white px-2.5 py-0.5 rounded-full font-bold">Khalti Gateway</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 items-center">
+                    <div class="space-y-2">
+                        <label class="block text-xs font-semibold text-obsidian">Your Khalti ID (Mobile No.):</label>
+                        <input type="text" id="khaltiIdInput" placeholder="98XXXXXXXX" class="w-full px-3 py-2 text-xs bg-white border border-[#5C2D91] rounded-xl focus:outline-none">
+                        <p class="text-[11px] text-neutral-600">You can also transfer directly via Khalti App to: <strong>9865045852</strong>.</p>
+                    </div>
+                    <div class="bg-white p-3 rounded-xl border border-[#5C2D91]/40 flex flex-col items-center text-center">
+                        <i class="fa-solid fa-qrcode text-5xl text-[#5C2D91] mb-1"></i>
+                        <span class="text-[11px] font-bold text-obsidian">Shanvi Studio Khalti: 9865045852</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: Bank Cards (Visa / Mastercard / SCT / ConnectIPS) -->
+            <div id="payPanel-card" class="hidden p-4 rounded-2xl bg-burgundy-50 border border-burgundy-700/30 space-y-3">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-extrabold text-burgundy-700 flex items-center gap-1.5">
+                        <i class="fa-solid fa-credit-card"></i>
+                        Nepali Bank Card / Fonepay (Visa / Mastercard / SCT)
+                    </span>
+                    <div class="flex gap-1.5 text-base text-burgundy-700">
+                        <i class="fa-brands fa-cc-visa"></i>
+                        <i class="fa-brands fa-cc-mastercard"></i>
+                    </div>
+                </div>
+                <div class="space-y-2.5">
+                    <input type="text" id="cardNumberInput" placeholder="Card Number (XXXX XXXX XXXX XXXX)" maxlength="19" class="w-full px-3 py-2 text-xs bg-white border border-neutral-300 rounded-xl focus:outline-none focus:border-burgundy-700">
+                    <div class="grid grid-cols-2 gap-2.5">
+                        <input type="text" placeholder="Expiry (MM/YY)" maxlength="5" class="w-full px-3 py-2 text-xs bg-white border border-neutral-300 rounded-xl focus:outline-none focus:border-burgundy-700">
+                        <input type="password" placeholder="CVV (3 Digits)" maxlength="4" class="w-full px-3 py-2 text-xs bg-white border border-neutral-300 rounded-xl focus:outline-none focus:border-burgundy-700">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Confirm Payment & Send Order to WhatsApp +9779865045852 -->
+            <div class="mt-6 flex flex-col sm:flex-row gap-3">
+                <button type="button" onclick="completeNepaliGatewayPayment()" id="finalPaySubmitBtn" class="flex-1 py-3.5 px-5 bg-[#60BB46] hover:opacity-95 text-white font-extrabold rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm">
+                    <i class="fa-solid fa-check-double"></i>
+                    <span id="finalPayBtnText">Confirm eSewa Payment & Send Order</span>
+                </button>
+            </div>
+            <p class="text-[11px] text-neutral-500 text-center mt-2.5">
+                After confirming, our official WhatsApp <strong>+977 9865045852</strong> will open so you can share your high-resolution photo and payment confirmation.
+            </p>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- MODAL 2: STORE OWNER "UPLOAD MY OWN PRODUCT PHOTO" MODAL (ENGLISH)    -->
+    <!-- ===================================================================== -->
+    <div id="ownerUploadModal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-gold-300 relative my-8">
+            <button onclick="closeModal('ownerUploadModal')" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-200 flex items-center justify-center text-neutral-600">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-burgundy-700 text-gold-300 flex items-center justify-center font-bold text-lg">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+                <div>
+                    <h3 class="np-heading text-2xl font-bold text-obsidian">Add New Frame Product</h3>
+                    <p class="text-xs text-neutral-500">Upload your own frame photo and set pricing in Nepali Rupees (Rs.)</p>
+                </div>
+            </div>
+
+            <form onsubmit="handleNewProductSubmit(event)" class="space-y-4">
+                <!-- Photo Upload Box -->
+                <div>
+                    <label class="block text-xs font-bold text-neutral-700 mb-1.5">1. Select Frame or Product Photo *</label>
+                    <label for="newProdPhotoInput" class="cursor-pointer border-2 border-dashed border-burgundy-700 bg-burgundy-50/40 hover:bg-burgundy-50 rounded-2xl p-4 flex flex-col items-center justify-center text-center transition">
+                        <img id="newProdPreviewImg" src="" alt="Preview" class="hidden w-32 h-36 object-cover rounded-lg mb-2 shadow border-4 border-burgundy-700">
+                        <i id="newProdUploadIcon" class="fa-solid fa-cloud-arrow-up text-2xl text-burgundy-700 mb-1"></i>
+                        <span class="text-xs font-bold text-obsidian">Click to select photo from phone or computer</span>
+                        <span class="text-[11px] text-neutral-500">Supports JPG, PNG, WEBP</span>
+                    </label>
+                    <input type="file" id="newProdPhotoInput" accept="image/*" class="hidden" onchange="previewNewProductModalImage(event)">
+                </div>
+
+                <!-- Product Title (English) -->
+                <div>
+                    <label class="block text-xs font-bold text-neutral-700 mb-1">2. Frame Product Title *</label>
+                    <input type="text" id="newProdTitleNp" required placeholder="e.g., Shanvi Royal Gold Wedding Portrait Frame" 
+                        class="w-full px-3.5 py-2.5 text-xs sm:text-sm border border-neutral-300 rounded-xl focus:outline-none focus:border-burgundy-700">
+                </div>
+
+                <!-- Price in NPR & Size -->
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold text-neutral-700 mb-1">3. Price (in NPR / Rs.) *</label>
+                        <input type="number" step="50" id="newProdPriceNPR" required placeholder="e.g., 1850" 
+                            class="w-full px-3.5 py-2.5 text-sm border border-neutral-300 rounded-xl focus:outline-none focus:border-burgundy-700">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-neutral-700 mb-1">4. Frame Size *</label>
+                        <input type="text" id="newProdSize" required placeholder="e.g., 12 x 18 Inches (A3+)" 
+                            class="w-full px-3.5 py-2.5 text-sm border border-neutral-300 rounded-xl focus:outline-none focus:border-burgundy-700">
+                    </div>
+                </div>
+
+                <!-- Category & Frame Border Effect -->
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold text-neutral-700 mb-1">5. Frame Category</label>
+                        <select id="newProdCategory" class="w-full px-3 py-2.5 text-xs sm:text-sm border border-neutral-300 rounded-xl focus:outline-none focus:border-burgundy-700">
+                            <option value="My Uploaded Frames">★ My Uploaded Frames</option>
+                            <option value="Royal Gold Frames">Royal Gold Frames</option>
+                            <option value="Wedding & Couple">Wedding & Couple</option>
+                            <option value="Teak & Hardwood">Teak & Hardwood</option>
+                            <option value="Wall Collage Sets">Wall Collage Sets</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-neutral-700 mb-1">6. Frame Border Finish</label>
+                        <select id="newProdBorderColor" class="w-full px-3 py-2.5 text-xs sm:text-sm border border-neutral-300 rounded-xl focus:outline-none focus:border-burgundy-700">
+                            <option value="#4A121E">Shanvi Deep Burgundy</option>
+                            <option value="#C59B5F">Royal Champagne Gold</option>
+                            <option value="#B37A7E">Signature Dusty Rose</option>
+                            <option value="#18181b">Matte Obsidian Black</option>
+                            <option value="#78350f">Natural Teak Wood</option>
+                            <option value="none">No Border (Photo Already Framed)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="pt-3 flex justify-end gap-3">
+                    <button type="button" onclick="closeModal('ownerUploadModal')" class="px-5 py-2.5 rounded-xl bg-neutral-100 text-neutral-700 text-xs font-bold hover:bg-neutral-200">
+                        Cancel
+                    </button>
+                    <button type="submit" class="px-6 py-2.5 rounded-xl bg-burgundy-700 hover:bg-gold-500 text-white hover:text-obsidian text-xs font-extrabold transition shadow-lg">
+                        Publish to Store
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- MODAL 3: STUDIO LOGO & SIGNATURE UPLOADER (lense2.png & lense.png)    -->
+    <!-- ===================================================================== -->
+    <div id="logoSettingsModal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-gold-300 relative my-8">
+            <button onclick="closeModal('logoSettingsModal')" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-200 flex items-center justify-center text-neutral-600">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="px-3 py-1 bg-rosebrand-100 text-burgundy-700 rounded-full text-xs font-bold uppercase tracking-wider">Shanvi Brand Identity</span>
+            <h3 class="np-heading text-2xl font-bold text-obsidian mt-2">Studio Logo & Signature Manager</h3>
+            <p class="text-xs text-neutral-600 mt-1">
+                Your attached <code>lense2.png</code> (SL Monogram Logo) and <code>lense.png</code> (Shanvi Camera Signature) are pre-configured. You can also upload custom logo files directly from your device below:
+            </p>
+
+            <div class="space-y-5 mt-5">
+                <!-- 1. Main Monogram Logo (lense2.png) -->
+                <div class="p-4 rounded-2xl bg-ivory border border-gold-300 flex items-center justify-between gap-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-16 h-16 bg-white rounded-xl border border-neutral-200 p-1 flex items-center justify-center overflow-hidden">
+                            <img id="modalPreviewLogo1" src="lense2.png" alt="Main Logo" class="w-full h-full object-contain"
+                                 onerror="this.src='https://placehold.co/120x120/FDFBF7/4A121E?text=SL'">
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-obsidian">1. Primary Studio Monogram (SL)</h4>
+                            <p class="text-[11px] text-neutral-500">File: <code>lense2.png</code></p>
+                        </div>
+                    </div>
+                    <label class="cursor-pointer bg-burgundy-700 hover:bg-burgundy-900 text-white text-xs font-bold px-3.5 py-2 rounded-xl transition shrink-0">
+                        Upload Logo
+                        <input type="file" accept="image/*" class="hidden" onchange="updateCustomBrandAsset('logo', event)">
+                    </label>
+                </div>
+
+                <!-- 2. Cursive Camera Signature (lense.png) -->
+                <div class="p-4 rounded-2xl bg-ivory border border-gold-300 flex items-center justify-between gap-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-24 h-16 bg-white rounded-xl border border-neutral-200 p-1 flex items-center justify-center overflow-hidden">
+                            <img id="modalPreviewLogo2" src="lense.png" alt="Signature" class="w-full h-full object-contain"
+                                 onerror="this.src='https://placehold.co/180x100/FFFFFF/B37A7E?text=Shanvi'">
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-obsidian">2. Studio Signature Watermark</h4>
+                            <p class="text-[11px] text-neutral-500">File: <code>lense.png</code></p>
+                        </div>
+                    </div>
+                    <label class="cursor-pointer bg-rosebrand-500 hover:bg-rosebrand-700 text-white text-xs font-bold px-3.5 py-2 rounded-xl transition shrink-0">
+                        Upload Signature
+                        <input type="file" accept="image/*" class="hidden" onchange="updateCustomBrandAsset('signature', event)">
+                    </label>
+                </div>
+            </div>
+
+            <div class="mt-6 flex justify-end">
+                <button onclick="closeModal('logoSettingsModal')" class="px-6 py-2.5 bg-obsidian text-white text-xs font-bold rounded-xl">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- MODAL 4: ENGLISH AI PROMPT & SETUP GUIDE                              -->
+    <!-- ===================================================================== -->
+    <div id="promptModal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-neutral-200 relative my-8 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('promptModal')" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-200 flex items-center justify-center text-neutral-600">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="px-3 py-1 bg-gold-100 text-burgundy-700 rounded-full text-xs font-bold uppercase tracking-wider">Shanvi Lens Studio • Prompt & Guide</span>
+            <h3 class="np-heading text-2xl font-bold text-obsidian mt-2">Master Website Prompt & Owner Guide</h3>
+            
+            <div class="space-y-4 mt-4 text-xs sm:text-sm text-neutral-700 leading-relaxed">
+                <div class="bg-ivory p-4 rounded-2xl border border-gold-300 space-y-2">
+                    <h4 class="font-bold text-burgundy-700">Key Features Built for Shanvi Lens Studio:</h4>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>100% Luxury English Typography:</strong> Switch between <em>Cormorant Garamond</em>, <em>Playfair Display</em>, and <em>Cinzel</em> from the top bar.</li>
+                        <li><strong>Nepali Rupees (Rs.) & Local Gateways:</strong> All prices are in NPR (Rs.) with an interactive checkout modal for <strong>eSewa</strong>, <strong>Khalti</strong>, and <strong>Bank Cards</strong>.</li>
+                        <li><strong>WhatsApp Live Chat (+9779865045852):</strong> Customers can chat or send custom frame orders directly to your WhatsApp number.</li>
+                    </ul>
+                </div>
+
+                <!-- Copyable Prompt Box -->
+                <div>
+                    <div class="flex justify-between items-center mb-1.5">
+                        <label class="font-bold text-obsidian text-xs">📋 Copy Master AI Prompt for Shanvi Lens Studio:</label>
+                        <button onclick="copyPromptText()" class="bg-burgundy-700 text-gold-300 hover:bg-gold-500 hover:text-obsidian px-3 py-1 rounded-lg text-xs font-bold transition">
+                            <i class="fa-regular fa-copy"></i> Copy Prompt
+                        </button>
+                    </div>
+                    <textarea id="aiPromptTextarea" readonly rows="6" class="w-full p-3 bg-obsidian text-gold-300 font-mono text-xs rounded-xl border border-neutral-700 focus:outline-none">Create a luxury e-commerce website inspired by kw.timehouse.store for a custom photo framing business named "Shanvi Lens Studio" in 100% luxury English. Use the brand's primary monogram logo 'lense2.png' (overlapping Deep Burgundy #4A121E 'S' and Champagne Gold #C59B5F 'L' with 'SHANVI LENS STUDIO') and cursive camera signature watermark 'lense.png' (Dusty Rose #B37A7E). Use 'Cormorant Garamond' and 'Playfair Display' for headings and 'Plus Jakarta Sans' for body text. Display all prices exclusively in Nepali Rupees (Rs. / NPR). Include an interactive checkout gateway for eSewa, Khalti, and Bank Cards, a Live Custom Frame Studio where customers upload their own photos, an Admin uploader for store photos, and a floating WhatsApp Live Chat connected to +9779865045852.</textarea>
+                    <p id="copyConfirmMsg" class="text-xs text-green-600 font-bold mt-1 hidden">✓ Master Prompt copied to clipboard!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- SLIDE-OVER SHOPPING CART DRAWER (ENGLISH + NPR + GATEWAY TRIGGER)     -->
+    <!-- ===================================================================== -->
+    <div id="cartDrawerBackdrop" onclick="toggleCartDrawer(false)" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 hidden transition-opacity"></div>
+    <aside id="cartDrawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+        <!-- Cart Header -->
+        <div class="p-5 bg-burgundy-900 text-white flex items-center justify-between border-b border-gold-500/30">
+            <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-bag-shopping text-gold-500 text-lg"></i>
+                <div>
+                    <h3 class="np-heading text-xl font-bold tracking-wide leading-none">Your Shopping Bag</h3>
+                    <span class="text-[11px] text-gold-300">Shanvi Lens Studio • NPR Checkout</span>
+                </div>
+            </div>
+            <button onclick="toggleCartDrawer(false)" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Cart Items List -->
+        <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-5 space-y-4">
+            <!-- Populated dynamically -->
+        </div>
+
+        <!-- Cart Footer: Nepali Payment Gateway Trigger + Direct WhatsApp -->
+        <div class="p-5 bg-ivory border-t border-gold-300/60 space-y-4">
+            <div class="space-y-1.5 text-sm">
+                <div class="flex justify-between text-neutral-600 text-xs">
+                    <span>HD Photo Print & Color Retouching:</span>
+                    <span class="text-green-700 font-bold">Complimentary (Free)</span>
+                </div>
+                <div class="flex justify-between font-extrabold text-base text-obsidian pt-2 border-t border-neutral-200">
+                    <span>Total Amount (NPR):</span>
+                    <span id="cartTotalDisplay" class="text-burgundy-700 text-xl">Rs. 0</span>
+                </div>
+            </div>
+
+            <!-- Primary Button: Open eSewa / Khalti / Bank Card Payment Modal -->
+            <button onclick="openPaymentGatewayFromCart()" class="w-full py-3.5 px-4 bg-burgundy-700 hover:bg-burgundy-900 text-gold-300 font-extrabold rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-xs sm:text-sm border border-gold-500/40">
+                <i class="fa-solid fa-wallet text-base"></i>
+                <span>Pay with eSewa / Khalti / Bank Card</span>
+            </button>
+
+            <!-- Secondary Button: Direct WhatsApp Order to +9779865045852 -->
+            <button onclick="checkoutDirectlyViaWhatsApp()" class="w-full py-3 px-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl shadow transition flex items-center justify-center gap-2 text-xs">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Order Directly via WhatsApp (+9779865045852)</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Toast Notification Box (Pure English, No alert() used) -->
+    <div id="toastNotification" class="fixed bottom-20 right-5 z-50 hidden bg-burgundy-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl border-l-4 border-gold-500 flex items-center gap-3 text-xs sm:text-sm font-medium transition-all">
+        <i class="fa-solid fa-circle-check text-gold-500 text-lg"></i>
+        <span id="toastMessage">Added to your bag!</span>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- APPLICATION JAVASCRIPT (100% ENGLISH + NPR + WHATSAPP +9779865045852) -->
+    <!-- ===================================================================== -->
+    <script>
+        // --- 1. OFFICIAL WHATSAPP NUMBER & NPR CURRENCY FORMATTER ---
+        const STUDIO_WHATSAPP = '9779865045852';
+
+        function formatNPR(amount) {
+            const rounded = Math.round(Number(amount) || 0);
+            return `Rs. ${rounded.toLocaleString('en-IN')}`;
+        }
+
+        // Luxury English Heading Font Theme Switcher
+        function changeEnglishFontTheme(theme) {
+            document.body.setAttribute('data-font-theme', theme);
+            const names = {
+                cormorant: 'Editorial Luxury (Cormorant Garamond) font applied',
+                playfair: 'Classic Gallery (Playfair Display) font applied',
+                cinzel: 'Royal Monogram (Cinzel Serif) font applied'
+            };
+            showToast(names[theme] || 'Font style updated');
+        }
+
+        // --- 2. SHANVI LENS STUDIO CURATED ENGLISH PRODUCTS (Prices in NPR / Rs.) ---
+        const defaultProducts = [
+            {
+                id: 'shanvi-en-1',
+                titleNp: 'Shanvi Royal Burgundy & Gold Portrait Frame',
+                category: 'Royal Gold Frames',
+                priceNPR: 1850,
+                oldPriceNPR: 2300,
+                size: '12 x 16 Inches (A3)',
+                badge: 'Shanvi Signature',
+                borderColor: '#4A121E',
+                image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'shanvi-en-2',
+                titleNp: 'Imperial Brushed Gold Wedding Couple Frame',
+                category: 'Wedding & Couple',
+                priceNPR: 2650,
+                oldPriceNPR: 3200,
+                size: '16 x 24 Inches (Large)',
+                badge: 'Wedding Edition',
+                borderColor: '#C59B5F',
+                image: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'shanvi-en-3',
+                titleNp: 'Studio Signature Dusty Rose Gold Gift Frame',
+                category: 'Wedding & Couple',
+                priceNPR: 1250,
+                oldPriceNPR: 1550,
+                size: '8 x 10 Inches (A4)',
+                badge: 'Best Gift',
+                borderColor: '#B37A7E',
+                image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'shanvi-en-4',
+                titleNp: 'Handcrafted Aged Teak & Sisau Wood Frame',
+                category: 'Teak & Hardwood',
+                priceNPR: 1650,
+                oldPriceNPR: 2100,
+                size: '12 x 18 Inches (A3+)',
+                badge: 'Solid Wood',
+                borderColor: '#78350f',
+                image: 'https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'shanvi-en-5',
+                titleNp: '5-Piece Family Gallery Wall Collage Frame Set',
+                category: 'Wall Collage Sets',
+                priceNPR: 4500,
+                oldPriceNPR: 5600,
+                size: 'Set of 5 Frames',
+                badge: 'Save 20%',
+                borderColor: '#18181b',
+                image: 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'shanvi-en-6',
+                titleNp: 'Ornate Museum Gold Anniversary Portrait Frame',
+                category: 'Royal Gold Frames',
+                priceNPR: 2850,
+                oldPriceNPR: 3400,
+                size: '16 x 20 Inches',
+                badge: 'Royal Gold',
+                borderColor: '#C59B5F',
+                image: 'https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'shanvi-en-7',
+                titleNp: 'Double-Mat Walnut Hardwood Fine Art Frame',
+                category: 'Teak & Hardwood',
+                priceNPR: 1950,
+                oldPriceNPR: 2400,
+                size: '12 x 16 Inches (A3)',
+                badge: 'Handcrafted',
+                borderColor: '#78350f',
+                image: 'https://images.unsplash.com/photo-1549887534-1541e9326642?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'shanvi-en-8',
+                titleNp: 'Triptych Living Room Royal Gallery Set (3 Frames)',
+                category: 'Wall Collage Sets',
+                priceNPR: 3850,
+                oldPriceNPR: 4600,
+                size: '3 Pieces (12x16 in)',
+                badge: 'Bestseller',
+                borderColor: '#4A121E',
+                image: 'https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&w=600&q=80'
+            }
+        ];
+
+        let products = [];
+        let selectedCategory = 'All Frames';
+        let cart = [];
+        let activeReplaceProductId = null;
+        let selectedPaymentMethod = 'esewa';
+
+        function loadProducts() {
+            try {
+                const saved = localStorage.getItem('shanvi_en_products_v4');
+                if (saved) {
+                    products = JSON.parse(saved);
+                } else {
+                    products = [...defaultProducts];
+                }
+            } catch (e) {
+                products = [...defaultProducts];
+            }
+        }
+
+        function saveProductsToStorage() {
+            try {
+                localStorage.setItem('shanvi_en_products_v4', JSON.stringify(products));
+            } catch (e) {
+                showToast('Photo saved for this session');
+            }
+        }
+
+        function resetDefaultProducts() {
+            localStorage.removeItem('shanvi_en_products_v4');
+            products = [...defaultProducts];
+            selectedCategory = 'All Frames';
+            renderProducts();
+            showToast('Default studio catalog restored!');
+        }
+
+        // --- 3. CUSTOM LOGO & SIGNATURE ASSET MANAGER ---
+        function updateCustomBrandAsset(type, event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const dataUrl = e.target.result;
+                if (type === 'logo') {
+                    ['mainHeaderLogoImg', 'sealMonogramImg', 'footerLogoImg', 'modalPreviewLogo1'].forEach(id => {
+                        const el = document.getElementById(id);
+                        if (el) { el.src = dataUrl; el.style.display = 'block'; }
+                    });
+                    const fb = document.getElementById('fallbackHeaderMonogram');
+                    if (fb) fb.classList.add('hidden');
+                    try { localStorage.setItem('shanvi_custom_logo', dataUrl); } catch(err){}
+                    showToast('✓ Shanvi primary logo updated!');
+                } else {
+                    ['heroSignatureImg', 'studioSigImg', 'sealSignatureImg', 'modalPreviewLogo2'].forEach(id => {
+                        const el = document.getElementById(id);
+                        if (el) { el.src = dataUrl; el.style.display = 'block'; }
+                    });
+                    const fb = document.getElementById('fallbackHeroSignature');
+                    if (fb) fb.classList.add('hidden');
+                    try { localStorage.setItem('shanvi_custom_sig', dataUrl); } catch(err){}
+                    showToast('✓ Shanvi signature watermark updated!');
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function loadSavedBrandAssets() {
+            const savedLogo = localStorage.getItem('shanvi_custom_logo');
+            if (savedLogo) {
+                ['mainHeaderLogoImg', 'sealMonogramImg', 'footerLogoImg', 'modalPreviewLogo1'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) { el.src = savedLogo; el.style.display = 'block'; }
+                });
+            }
+            const savedSig = localStorage.getItem('shanvi_custom_sig');
+            if (savedSig) {
+                ['heroSignatureImg', 'studioSigImg', 'sealSignatureImg', 'modalPreviewLogo2'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) { el.src = savedSig; el.style.display = 'block'; }
+                });
+            }
+        }
+
+        // --- 4. RENDER PRODUCT GRID (100% ENGLISH + NPR) ---
+        function renderProducts(customSearchQuery) {
+            const grid = document.getElementById('productGrid');
+            const searchVal = (customSearchQuery !== undefined ? customSearchQuery : document.getElementById('searchInput').value).toLowerCase().trim();
+            const sortVal = document.getElementById('sortSelect').value;
+
+            let filtered = products.filter(p => {
+                const matchesCat = (selectedCategory === 'All Frames') || (p.category === selectedCategory);
+                const titleNp = (p.titleNp || '').toLowerCase();
+                const matchesSearch = titleNp.includes(searchVal) ||
+                                      p.category.toLowerCase().includes(searchVal) ||
+                                      p.size.toLowerCase().includes(searchVal);
+                return matchesCat && matchesSearch;
+            });
+
+            if (sortVal === 'low-high') {
+                filtered.sort((a, b) => a.priceNPR - b.priceNPR);
+            } else if (sortVal === 'high-low') {
+                filtered.sort((a, b) => b.priceNPR - a.priceNPR);
+            }
+
+            document.getElementById('productCountText').textContent = `Showing ${filtered.length} luxury frames`;
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-16 bg-white rounded-3xl border border-gold-300/60 p-8">
+                        <i class="fa-regular fa-image text-4xl text-burgundy-700 mb-3"></i>
+                        <h3 class="np-heading text-2xl font-bold text-obsidian">No matching frames found</h3>
+                        <p class="text-xs text-neutral-500 mt-1 mb-4">Upload your own frame photo or browse all categories.</p>
+                        <button onclick="openModal('ownerUploadModal')" class="px-5 py-2.5 bg-burgundy-700 text-white text-xs font-bold rounded-full hover:bg-gold-500 hover:text-obsidian transition">
+                            + Upload My Frame Photo
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(prod => {
+                const frameBorderStyle = prod.borderColor === 'none' 
+                    ? 'border: none; padding: 0;' 
+                    : `border: 9px solid ${prod.borderColor || '#4A121E'}; padding: 10px; background: #fff;`;
+
+                return `
+                <div class="product-card bg-white rounded-2xl border border-gold-300/50 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <!-- Image Showcase Box -->
+                        <div class="relative bg-[#F4F0EA] p-6 flex items-center justify-center h-72 overflow-hidden">
+                            <!-- Status Badge -->
+                            <span class="absolute top-3 left-3 z-10 bg-burgundy-700 text-gold-300 text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full shadow">
+                                ${prod.badge || 'Shanvi Exclusive'}
+                            </span>
+
+                            <!-- Quick Replace Photo Button for the Business Owner -->
+                            <button onclick="triggerQuickPhotoReplace('${prod.id}')" 
+                                    title="Click to replace with your own product photo"
+                                    class="absolute top-3 right-3 z-10 bg-white/90 hover:bg-gold-500 text-burgundy-700 hover:text-obsidian w-8 h-8 rounded-full shadow flex items-center justify-center transition">
+                                <i class="fa-solid fa-camera text-xs"></i>
+                            </button>
+
+                            <!-- Framed Image Preview -->
+                            <div class="card-mini-frame w-44 h-56 flex flex-col items-center justify-center relative" style="${frameBorderStyle}">
+                                <img src="${prod.image}" 
+                                     onerror="this.src='https://placehold.co/400x500/4A121E/C59B5F?text=Shanvi+Frame'"
+                                     alt="${prod.titleNp}" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <!-- Product Details in Luxury English -->
+                        <div class="p-5">
+                            <div class="flex items-center justify-between text-xs text-neutral-500 mb-1.5">
+                                <span class="font-bold text-burgundy-700 uppercase tracking-wider text-[10px]">${prod.category}</span>
+                                <span class="bg-ivory border border-gold-300/60 px-2 py-0.5 rounded text-obsidian font-semibold text-[11px]">${prod.size}</span>
+                            </div>
+
+                            <h3 class="np-heading text-xl font-bold text-obsidian leading-snug group-hover:text-burgundy-700 transition">
+                                ${prod.titleNp}
+                            </h3>
+
+                            <!-- Price Row in NPR -->
+                            <div class="mt-3 pt-2 border-t border-neutral-100 flex items-baseline justify-between">
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-xl font-extrabold text-burgundy-700">${formatNPR(prod.priceNPR)}</span>
+                                    ${prod.oldPriceNPR ? `<span class="text-xs text-neutral-400 line-through">${formatNPR(prod.oldPriceNPR)}</span>` : ''}
+                                </div>
+                                <span class="text-[11px] text-green-700 font-bold">Includes Print</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Actions -->
+                    <div class="px-5 pb-5 pt-1 flex gap-2">
+                        <button onclick="addToCart('${prod.id}', false)" class="flex-1 bg-burgundy-700 hover:bg-gold-500 text-white hover:text-obsidian font-bold py-2.5 px-3 rounded-xl text-xs sm:text-sm transition flex items-center justify-center gap-1.5 shadow-xs">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                            <span>Add to Bag</span>
+                        </button>
+                        <button onclick="addToCart('${prod.id}', true)" title="Instant Checkout via eSewa / Khalti" class="px-3 py-2.5 bg-esewa hover:bg-green-600 text-white rounded-xl text-xs font-bold transition shadow-xs">
+                            Buy Now
+                        </button>
+                        <button onclick="loadProductIntoStudio('${prod.id}')" title="Customize in Studio" class="px-3 py-2.5 bg-ivory hover:bg-gold-100 text-burgundy-700 border border-gold-300 rounded-xl text-xs font-semibold transition">
+                            <i class="fa-solid fa-sliders"></i>
+                        </button>
+                    </div>
+                </div>
+                `;
+            }).join('');
+        }
+
+        function setCategory(cat) {
+            selectedCategory = cat;
+            document.getElementById('currentCategoryTitle').textContent = cat;
+            
+            document.querySelectorAll('.nav-cat-btn').forEach(btn => {
+                if (btn.getAttribute('data-cat') === cat) {
+                    btn.classList.add('text-burgundy-700', 'border-b-2', 'border-burgundy-700', 'font-bold');
+                } else {
+                    btn.classList.remove('text-burgundy-700', 'border-b-2', 'border-burgundy-700', 'font-bold');
+                }
+            });
+            renderProducts();
+        }
+
+        function filterProducts(val) {
+            renderProducts(val);
+        }
+
+        // --- 5. OWNER FEATURE: QUICK REPLACE PHOTO ON ANY CARD OR ADD NEW PRODUCT ---
+        function triggerQuickPhotoReplace(productId) {
+            activeReplaceProductId = productId;
+            document.getElementById('quickReplaceInput').click();
+        }
+
+        function handleQuickPhotoReplace(event) {
+            const file = event.target.files[0];
+            if (!file || !activeReplaceProductId) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const idx = products.findIndex(p => p.id === activeReplaceProductId);
+                if (idx !== -1) {
+                    products[idx].image = e.target.result;
+                    saveProductsToStorage();
+                    renderProducts();
+                    showToast('✓ Product photo updated with your image!');
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+
+        let newModalTempImageBase64 = '';
+        function previewNewProductModalImage(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                newModalTempImageBase64 = e.target.result;
+                const previewImg = document.getElementById('newProdPreviewImg');
+                previewImg.src = newModalTempImageBase64;
+                previewImg.classList.remove('hidden');
+                document.getElementById('newProdUploadIcon').classList.add('hidden');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function handleNewProductSubmit(event) {
+            event.preventDefault();
+            const titleNp = document.getElementById('newProdTitleNp').value.trim();
+            const priceNPR = parseFloat(document.getElementById('newProdPriceNPR').value) || 1850;
+            const size = document.getElementById('newProdSize').value.trim();
+            const category = document.getElementById('newProdCategory').value;
+            const borderColor = document.getElementById('newProdBorderColor').value;
+
+            const imageToUse = newModalTempImageBase64 || 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80';
+
+            const newProd = {
+                id: 'shanvi-en-' + Date.now(),
+                titleNp: titleNp,
+                category: category,
+                priceNPR: priceNPR,
+                oldPriceNPR: Math.round(priceNPR * 1.2),
+                size: size,
+                badge: 'New Arrival',
+                borderColor: borderColor,
+                image: imageToUse
+            };
+
+            products.unshift(newProd);
+            saveProductsToStorage();
+            selectedCategory = 'All Frames';
+            renderProducts();
+            closeModal('ownerUploadModal');
+            
+            event.target.reset();
+            newModalTempImageBase64 = '';
+            document.getElementById('newProdPreviewImg').classList.add('hidden');
+            document.getElementById('newProdUploadIcon').classList.remove('hidden');
+
+            showToast('✓ New frame published to your store!');
+        }
+
+        // --- 6. LIVE CUSTOMIZER STUDIO IN ENGLISH ---
+        let currentStudioFrameClass = 'frame-style-burgundy';
+        let currentStudioFrameName = 'Shanvi Royal Burgundy Frame';
+        let currentStudioUploadedDataUrl = 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=700&q=80';
+
+        function handleStudioPhotoUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                currentStudioUploadedDataUrl = e.target.result;
+                document.getElementById('studioUploadedImg').src = currentStudioUploadedDataUrl;
+                document.getElementById('heroPreviewImg').src = currentStudioUploadedDataUrl;
+                document.getElementById('uploadedFileName').textContent = `✓ Photo Loaded: ${file.name}`;
+                showToast('✓ Your photo is now framed in the live preview!');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function updateStudioFrame(frameClass, frameLabel) {
+            const container = document.getElementById('studioFrameContainer');
+            container.classList.remove('frame-style-burgundy', 'frame-style-gold', 'frame-style-rosegold', 'frame-style-black', 'frame-style-wood', 'frame-style-white');
+            container.classList.add(frameClass);
+            currentStudioFrameClass = frameClass;
+            currentStudioFrameName = frameLabel;
+            updateStudioPrice();
+        }
+
+        function updateStudioMat(paddingClass) {
+            const container = document.getElementById('studioFrameContainer');
+            container.classList.remove('p-0', 'p-3', 'p-6', 'p-10');
+            container.classList.add(paddingClass);
+        }
+
+        function toggleStudioSignature(show) {
+            const stamp = document.getElementById('studioSignatureStamp');
+            if (show) {
+                stamp.classList.remove('hidden');
+            } else {
+                stamp.classList.add('hidden');
+            }
+        }
+
+        function updateStudioPrice() {
+            const sizeSelect = document.getElementById('studioSizeSelect');
+            const priceNPR = parseFloat(sizeSelect.value);
+            const sizeLabel = sizeSelect.options[sizeSelect.selectedIndex].getAttribute('data-label');
+
+            document.getElementById('studioLivePrice').textContent = formatNPR(priceNPR);
+            document.getElementById('studioSizeBadge').textContent = `Size: ${sizeLabel} • ${currentStudioFrameName}`;
+        }
+
+        function changeWallBg(hexColor) {
+            document.getElementById('wallBackground').style.backgroundColor = hexColor;
+        }
+
+        function setHeroFrame(frameClass) {
+            const heroBox = document.getElementById('heroFrameBox');
+            heroBox.classList.remove('frame-style-burgundy', 'frame-style-gold', 'frame-style-rosegold', 'frame-style-black', 'frame-style-wood', 'frame-style-white');
+            heroBox.classList.add(frameClass);
+        }
+
+        function loadProductIntoStudio(prodId) {
+            const prod = products.find(p => p.id === prodId);
+            if (!prod) return;
+            currentStudioUploadedDataUrl = prod.image;
+            document.getElementById('studioUploadedImg').src = prod.image;
+            document.getElementById('customizer-studio').scrollIntoView({ behavior: 'smooth' });
+            showToast(`"${prod.titleNp}" loaded into Custom Studio`);
+        }
+
+        function addCustomStudioFrameToCart(openPaymentImmediately) {
+            const sizeSelect = document.getElementById('studioSizeSelect');
+            const priceNPR = parseFloat(sizeSelect.value);
+            const sizeLabel = sizeSelect.options[sizeSelect.selectedIndex].getAttribute('data-label');
+            const sigIncluded = document.getElementById('signatureToggle').checked ? 'With Shanvi Signature' : 'No Signature';
+
+            const customItem = {
+                cartItemId: 'studio-' + Date.now(),
+                titleNp: `Custom Frame (${currentStudioFrameName} - ${sigIncluded})`,
+                size: sizeLabel,
+                priceNPR: priceNPR,
+                image: currentStudioUploadedDataUrl,
+                qty: 1
+            };
+
+            cart.push(customItem);
+            renderCart();
+            if (openPaymentImmediately) {
+                openPaymentGatewayFromCart();
+            } else {
+                toggleCartDrawer(true);
+                showToast('✓ Custom framed photo added to your bag!');
+            }
+        }
+
+        // --- 7. SHOPPING CART, NEPALI PAYMENT GATEWAY & WHATSAPP ORDERING ---
+        function addToCart(prodId, buyNow) {
+            const prod = products.find(p => p.id === prodId);
+            if (!prod) return;
+
+            const existing = cart.find(item => item.id === prodId);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({
+                    cartItemId: 'cart-' + Date.now(),
+                    id: prod.id,
+                    titleNp: prod.titleNp,
+                    size: prod.size,
+                    priceNPR: prod.priceNPR,
+                    image: prod.image,
+                    qty: 1
+                });
+            }
+
+            renderCart();
+            if (buyNow) {
+                openPaymentGatewayFromCart();
+            } else {
+                showToast(`"${prod.titleNp}" added to bag`);
+            }
+        }
+
+        function updateCartQty(cartItemId, delta) {
+            const idx = cart.findIndex(c => c.cartItemId === cartItemId);
+            if (idx === -1) return;
+            cart[idx].qty += delta;
+            if (cart[idx].qty <= 0) {
+                cart.splice(idx, 1);
+            }
+            renderCart();
+        }
+
+        function renderCart() {
+            const container = document.getElementById('cartItemsContainer');
+            const badge = document.getElementById('cartCountBadge');
+            const totalEl = document.getElementById('cartTotalDisplay');
+
+            const totalQty = cart.reduce((sum, i) => sum + i.qty, 0);
+            badge.textContent = totalQty;
+
+            const totalNPR = cart.reduce((sum, i) => sum + (i.priceNPR * i.qty), 0);
+            totalEl.textContent = formatNPR(totalNPR);
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-16 text-neutral-400">
+                        <i class="fa-solid fa-bag-shopping text-4xl mb-3 text-neutral-300"></i>
+                        <p class="text-sm font-bold text-neutral-600">Your shopping bag is empty</p>
+                        <p class="text-xs mt-1">Select a luxury frame or upload your own photo in the Custom Studio.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = cart.map(item => `
+                <div class="flex gap-3.5 bg-ivory p-3 rounded-2xl border border-gold-300/60 items-center">
+                    <img src="${item.image}" alt="${item.titleNp}" class="w-16 h-20 object-cover rounded-lg border-2 border-burgundy-700 shrink-0">
+                    <div class="flex-1 min-w-0">
+                        <h4 class="text-xs font-bold text-obsidian truncate">${item.titleNp}</h4>
+                        <p class="text-[11px] text-neutral-500">${item.size}</p>
+                        <p class="text-xs font-extrabold text-burgundy-700 mt-1">${formatNPR(item.priceNPR)}</p>
+                    </div>
+                    <div class="flex items-center gap-1.5 bg-white border border-neutral-200 rounded-lg px-2 py-1">
+                        <button onclick="updateCartQty('${item.cartItemId}', -1)" class="text-xs px-1 text-neutral-600 hover:text-obsidian font-bold">-</button>
+                        <span class="text-xs font-bold px-1">${item.qty}</span>
+                        <button onclick="updateCartQty('${item.cartItemId}', 1)" class="text-xs px-1 text-neutral-600 hover:text-obsidian font-bold">+</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleCartDrawer(open) {
+            const drawer = document.getElementById('cartDrawer');
+            const backdrop = document.getElementById('cartDrawerBackdrop');
+            if (open) {
+                backdrop.classList.remove('hidden');
+                drawer.classList.remove('translate-x-full');
+            } else {
+                backdrop.classList.add('hidden');
+                drawer.classList.add('translate-x-full');
+            }
+        }
+
+        // Open Nepali Payment Gateway Modal (eSewa / Khalti / Bank Card)
+        function openPaymentGatewayFromCart() {
+            if (cart.length === 0) {
+                showToast('Please add at least one frame to your bag first!');
+                return;
+            }
+            toggleCartDrawer(false);
+            const totalNPR = cart.reduce((sum, i) => sum + (i.priceNPR * i.qty), 0);
+            document.getElementById('gatewayTotalAmount').textContent = formatNPR(totalNPR);
+            openModal('paymentGatewayModal');
+        }
+
+        function selectPaymentTab(method) {
+            selectedPaymentMethod = method;
+            ['esewa', 'khalti', 'card'].forEach(m => {
+                document.getElementById(`payPanel-${m}`).classList.add('hidden');
+                const btn = document.getElementById(`tabBtn-${m}`);
+                btn.classList.remove('border-[#60BB46]', 'bg-[#60BB46]/10', 'border-[#5C2D91]', 'bg-[#5C2D91]/10', 'border-burgundy-700', 'bg-burgundy-50');
+                btn.classList.add('border-neutral-200');
+            });
+
+            document.getElementById(`payPanel-${method}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tabBtn-${method}`);
+            activeBtn.classList.remove('border-neutral-200');
+
+            const submitBtn = document.getElementById('finalPaySubmitBtn');
+            const submitText = document.getElementById('finalPayBtnText');
+
+            if (method === 'esewa') {
+                activeBtn.classList.add('border-[#60BB46]', 'bg-[#60BB46]/10');
+                submitBtn.className = 'flex-1 py-3.5 px-5 bg-[#60BB46] hover:opacity-95 text-white font-extrabold rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm';
+                submitText.textContent = 'Confirm eSewa Payment & Send Order';
+            } else if (method === 'khalti') {
+                activeBtn.classList.add('border-[#5C2D91]', 'bg-[#5C2D91]/10');
+                submitBtn.className = 'flex-1 py-3.5 px-5 bg-[#5C2D91] hover:opacity-95 text-white font-extrabold rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm';
+                submitText.textContent = 'Confirm Khalti Payment & Send Order';
+            } else {
+                activeBtn.classList.add('border-burgundy-700', 'bg-burgundy-50');
+                submitBtn.className = 'flex-1 py-3.5 px-5 bg-burgundy-700 hover:bg-burgundy-900 text-gold-300 font-extrabold rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm';
+                submitText.textContent = 'Confirm Bank Card Payment & Send Order';
+            }
+        }
+
+        function completeNepaliGatewayPayment() {
+            const name = document.getElementById('payCustName').value.trim();
+            const phone = document.getElementById('payCustPhone').value.trim();
+            const address = document.getElementById('payCustAddress').value.trim();
+
+            if (!name || !phone || !address) {
+                showToast('Please fill in your Name, Mobile Number, and Delivery Address!');
+                return;
+            }
+
+            const methodNames = {
+                esewa: 'eSewa Mobile Wallet',
+                khalti: 'Khalti Digital Wallet',
+                card: 'Bank Card / Fonepay (Visa/Mastercard)'
+            };
+
+            const totalNPR = cart.reduce((sum, i) => sum + (i.priceNPR * i.qty), 0);
+
+            let message = `✨ *NEW FRAME ORDER - SHANVI LENS STUDIO*\n`;
+            message += `----------------------------------\n`;
+            message += `👤 *Customer Name:* ${name}\n`;
+            message += `📞 *Mobile Number:* ${phone}\n`;
+            message += `📍 *Delivery Address:* ${address}\n`;
+            message += `💳 *Payment Method:* ${methodNames[selectedPaymentMethod]}\n\n`;
+            message += `🖼️ *Ordered Frames:*\n`;
+
+            cart.forEach((item, index) => {
+                message += `${index + 1}. ${item.titleNp} (${item.size}) x${item.qty} = ${formatNPR(item.priceNPR * item.qty)}\n`;
+            });
+
+            message += `\n💰 *Total Payable Amount:* ${formatNPR(totalNPR)} (NPR)\n`;
+            message += `----------------------------------\n`;
+            message += `Hello Shanvi Lens Studio! I am attaching my high-resolution photo for framing and payment confirmation here on WhatsApp.`;
+
+            closeModal('paymentGatewayModal');
+            showToast('✓ Order prepared! Redirecting to WhatsApp...');
+            const encoded = encodeURIComponent(message);
+            window.open(`https://wa.me/${STUDIO_WHATSAPP}?text=${encoded}`, '_blank');
+        }
+
+        function checkoutDirectlyViaWhatsApp() {
+            if (cart.length === 0) {
+                showToast('Please add a frame to your bag first!');
+                return;
+            }
+            const totalNPR = cart.reduce((sum, i) => sum + (i.priceNPR * i.qty), 0);
+            let message = `👋 *Hello Shanvi Lens Studio! I would like to order the following frames:*\n\n`;
+            cart.forEach((item, index) => {
+                message += `${index + 1}. ${item.titleNp} (${item.size}) x${item.qty} - ${formatNPR(item.priceNPR * item.qty)}\n`;
+            });
+            message += `\n*Total Amount:* ${formatNPR(totalNPR)}\n`;
+            message += `I will share my photo for framing here on WhatsApp and complete payment via eSewa / Khalti.`;
+
+            window.open(`https://wa.me/${STUDIO_WHATSAPP}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // --- 8. LIVE WHATSAPP CHAT WIDGET HELPERS (+9779865045852) ---
+        function toggleWhatsAppWidget(forceState) {
+            const popup = document.getElementById('waChatPopup');
+            if (forceState === true) {
+                popup.classList.remove('hidden');
+            } else if (forceState === false) {
+                popup.classList.add('hidden');
+            } else {
+                popup.classList.toggle('hidden');
+            }
+        }
+
+        function openDirectWhatsAppChat(prefilledMsg) {
+            const msg = prefilledMsg || 'Hello Shanvi Lens Studio! I would like to inquire about custom photo frames.';
+            window.open(`https://wa.me/${STUDIO_WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        function sendCustomWhatsAppMsg() {
+            const input = document.getElementById('waCustomMsgInput');
+            const text = input.value.trim() || 'Hello Shanvi Lens Studio! I want to order a custom photo frame.';
+            input.value = '';
+            openDirectWhatsAppChat(text);
+        }
+
+        // --- 9. UI MODALS, CLIPBOARD & TOAST HELPERS ---
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        function copyPromptText() {
+            const textarea = document.getElementById('aiPromptTextarea');
+            textarea.select();
+            document.execCommand('copy');
+            const msg = document.getElementById('copyConfirmMsg');
+            msg.classList.remove('hidden');
+            setTimeout(() => msg.classList.add('hidden'), 3000);
+        }
+
+        let toastTimeout;
+        function showToast(text) {
+            const toast = document.getElementById('toastNotification');
+            document.getElementById('toastMessage').textContent = text;
+            toast.classList.remove('hidden');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3200);
+        }
+
+        // Initialize Store on Load
+        window.onload = function() {
+            loadProducts();
+            loadSavedBrandAssets();
+            renderProducts();
+            renderCart();
+            updateStudioPrice();
+        };
+    </script>
+</body>
+</html>
